@@ -1,0 +1,1347 @@
+/* Edit these color values to change the overall color scheme. */
+:root {
+	--background-color: #ebf3ff;
+	--link-color: #3d5a98;
+	--link-hover-color: #7596b9;
+}
+
+html {
+	font-family: sans-serif;
+	font-size: 16px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Set default font for text. Headings and menu items are overridden */
+body {
+	color: #222;
+	background: #f6f6f6;
+	font-family: "Roboto Condensed",sans-serif;
+	font-size: 100%;
+	line-height: 18px;
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	  display: block;
+}
+
+/* Remove the gray background color from active links in IE 10. */
+a {
+	  background-color: transparent;
+}
+
+a:link {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+/* Improve readability when focused and also mouse hovered in all browsers. */
+a:active,
+a:hover {
+	outline: 0;
+}
+
+a:visited {
+	color: var(--link-color);
+}
+
+a:hover {
+	color: var(--link-hover-color);
+}
+
+h1 {
+	color: #1a77bd;
+	font-size:26px;
+	font-weight: 400;
+	line-height: 1.2em;
+	margin: 0;
+}
+
+h2 {
+	color: #1a77bd; /* blue */
+	font-size: 16px;
+	line-height: 24px;
+}
+
+h1 a,
+h2 a {
+	text-decoration: none;
+}
+
+/* Address differences between Firefox and other browsers. */
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+/* Remove border when inside `a` element in IE 8/9/10. */
+img {
+	border: 0;
+}
+
+input
+{
+	margin: 0px;
+}
+
+/* General green button style used on Search form and Search results */
+button,
+.search-results-layout-options-button,
+.search-view-toggle-button {
+	background: rgba(0,0,0,0) linear-gradient(to bottom, #7ea115, #608002) repeat scroll 0 0;
+	border: 1px solid #7ea115;
+	-webkit-box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
+	-moz-box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
+	box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
+	color: #fff;
+	padding: 3px 8px;
+}
+
+button:hover,
+.search-results-layout-options-button:hover,
+.search-view-toggle-button:hover {
+	-webkit-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
+	-moz-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
+	box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
+}
+
+input[type=submit],
+button,
+a.button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-color: #A49D4C;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	color:#fff;
+	cursor: pointer;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+	margin: 0;
+	padding: 3px 8px;
+}
+
+input[type=submit]:hover,
+button:hover,
+a.button:hover {
+	background-color: #706b34;
+}
+
+/* Input buttons (submit) and Modify Search button (a) */
+input[type=submit],
+.modify-search-button {
+	background: rgba(0,0,0,0) linear-gradient(to bottom, #376c8b, #29536b) repeat scroll 0 0;
+	border: 1px solid #29536b;
+	-webkit-box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
+	-moz-box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
+	box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
+	color: #fff;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	margin-top: 6px;
+	min-width: 124px;
+	padding: 3px 8px;
+	width: 150px;
+}
+
+input[type=submit]:hover,
+.modify-search-button:hover {
+	-webkit-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
+	-moz-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
+	box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
+}
+
+input[type=text] {
+	border-color: #ddd;
+	border-width: 0.07143em;
+	border-style: solid;
+	display: block;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	height: 28px;
+	line-height: 18px;
+	margin: 0;
+	max-width: 100%;
+	min-height: 1em;
+	padding: 0.30357em;
+}
+
+label,
+.label {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+select {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0;
+	border: 1px solid #ccc;
+	display:inline-block;
+	font-size: 14px;
+	height: 28px;
+	line-height: 18px;
+	margin-bottom: 0px;
+	margin-right: 3px;
+	width:46%;
+	vertical-align: top;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+th, td {
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+/* ----- Layout classes ----- */
+
+/* Add a box shadow around the entire page area. */
+/* Set content width the same as WP website width */
+/* Remove padding so banner and menu are flush with left and right */
+#wrap {
+	background: #fff;
+	-moz-box-shadow: 0 4px 15px 5px #aaa;
+	-webkit-box-shadow: 0 4px 15px 5px #aaa;
+	box-shadow: 0 4px 15px 5px #aaa;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12px;
+	overflow: hidden;
+	padding: 0;
+	width: 960px;
+}
+
+.inputs {
+	min-height: 3em;
+	line-height: 42px;
+}
+
+.column,
+.columns {
+	box-sizing: border-box;
+	float: left;
+	margin-left: 4%;
+	width: 100%;
+}
+
+.column:first-child,
+.columns:first-child {
+	margin-left: 0;
+}
+
+/* two and five are used for the metadata on items/show and for label / field pairs on advanced and subject search */
+.two.columns {
+	width: 22%;
+}
+
+.five.columns {
+	width: 73%;
+}
+
+.offset-by-three.columns {
+	margin-left: 26%;
+}
+
+.pagination-nav input {
+	display: inline;
+	margin: 0 5px 0 0;
+	text-align: center;
+	width: 4em;
+}
+
+.page-input {
+	padding-right: 10px;
+}
+
+/* === Banner CSS ===
+--------------------------------------------------------- */
+#branding {
+	border-bottom: 2px solid #fff;
+	clear: both;
+	display: block;
+	float: left;
+	line-height: 12px;
+	overflow: hidden;
+	padding-top:0;
+	position: relative;
+	width: 100%;
+}
+
+#branding, #bg_image {
+	height: auto;
+	max-width: 100%;
+	min-height: inherit !important;
+}
+
+#bg_image {
+	max-width: 600px;
+}
+
+/* Set header to relative positioning so search box gets positioned correctly  */
+#header {
+	background-color: var(--background-color);
+	margin: 0 auto;
+	max-width: 960px;
+	position: relative;
+}
+
+#header::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/* === Search Box in banner ===
+--------------------------------------------------------- */
+#simple-search-container {
+  margin-right: 12px;
+	padding: 16px 10px 0px 6px;
+	position: absolute;
+	right:0;
+	text-align: right;
+	width: 30%;
+	z-index: 250;
+}
+
+#simple-search-container a {
+	color: var(--link-color);
+	font-size: 16px;
+}
+
+#simple-search-container a:hover {
+	color: var(--link-hover-color);
+}
+
+#simple-search-container a:link,
+#simple-search-container a:visited {
+	text-decoration: none;
+}
+
+#simple-search-container button {
+	border: none;
+	box-shadow: none;
+	padding: 0.25em;
+	position: relative;
+	text-indent: -9999px; /* move default text out of the way */
+	width: 32px;
+}
+
+#simple-search-container button::after {
+	background-color: #29536b;
+	bottom: 0;
+	content: "\f002";
+	font-family: "FontAwesome";
+	left: 0;
+	line-height: 28px;
+	position: absolute;
+	text-indent: 0;
+	top: 0;
+	width: 32px;
+}
+
+#simple-search-container button:hover::after {
+    background-color: #5f5f5f;
+}
+
+#simple-search-container form {
+	margin: 0.375em 0;
+}
+
+#simple-search-container input {
+	vertical-align: top;
+	margin: 0;
+}
+
+#simple-search-container input[type=text] {
+	float: left;
+	width: 240px;
+}
+
+#simple-search-container .simple-search-subject-link {
+	float: left;
+}
+
+/* ------- Advanced Search page styling that is specific to this theme. ------*/
+#search-filter-form {
+	font-family: "Lato", sans-serif;
+}
+
+.table-view-layout-option select {
+	width: 160px;
+}
+
+.table-view-limit-option select {
+	width: 60px;
+}
+
+/* add a little padding before the Field filter text box */
+#search-filter-form .advanced-search-terms {
+	margin-top:8px;
+}
+
+#search-filter-form input[type=text] {
+  	border: 1px solid #d8d8d8;
+  	box-shadow: 0 0 .25em #d6d6d6 inset;
+  	display: inline-block;
+  	font-size: 14px;
+  	height: 30px;
+  	line-height: 20px;
+  	max-width: 100%;
+  	min-height: 2em;
+  	padding: 0.375em;
+  	width:100%;
+}
+
+#search-filter-form label {
+    font-size: 16px;
+    margin-right: 0px;
+    margin-bottom: 4px;
+}
+
+.search-radio-buttons label,
+.search-form-view-selector label {
+	clear: left;
+	float: left;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 10px;
+	padding: 0 0 8px 24px;;
+}
+
+#primary .search-radio-buttons {
+	line-height: 18px;
+	margin: 0 0 8px 0;
+	padding: 8px 0;
+}
+
+#primary .search-radio-buttons label {
+	padding-left: 0;
+}
+
+#secondary h2 {
+    color:#555;
+}
+
+#secondary .search-radio-buttons,
+.search-form-view-selector {
+	margin-bottom: 8px;
+	padding: 8px 0;
+}
+
+#search-title-only .search-radio-buttons {
+	margin-bottom: 40px;
+}
+
+#search-selects {
+  	margin-top: 12px;
+}
+
+/* Buttons for Add a Field and Remove field */
+.add_search {
+  	margin-top: 6px;
+  	margin-bottom: 12px;
+}
+
+/* Remove field button - styled red */
+.search-form-section .remove_search {
+	background: rgba(0,0,0,0) linear-gradient(to bottom, #ad6345, #7d422a) repeat scroll 0 0;
+	border: 1px solid #7e432c;
+	-webkit-box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
+	-moz-box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
+	box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
+	color: #fff;
+	font-size: 14px;
+	line-height: 21px;
+	padding: 3px 8px;
+}
+
+.search-form-section .remove_search:hover {
+	-webkit-box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
+	-moz-box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
+	box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
+}
+
+.remove_search {
+	height: 29px;
+	margin: 8px 0 16px 0;
+	position: relative;
+	text-indent: 0px;
+	width: 102px;
+}
+
+.remove_search:after {
+ 	content: "";
+}
+
+
+/* === Main Menu CSS ===
+--------------------------------------------------------- */
+.nav-menu {
+	background-color: #482102;
+	line-height: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-menu a:link, .nav-menu a:visited {
+ 	color: var(--link-color);
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+ 	background-color: var(--link-hover-color);
+}
+
+.nav-item {
+	border-right: 1px solid #2a0300;
+	box-shadow: 1px 0 0 #60391a;
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.nav-item > a {
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px 13px;
+}
+
+/* Hide mobile menu toggle until screen sizes are smaller */
+#nav-toggle {
+ 	display: none;
+}
+
+
+/* === General Content Area CSS ===
+--------------------------------------------------------- */
+
+/* Add padding around content area */
+#content {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	clear: both;
+	float: left;
+	padding: 8px 12px 12px 12px;
+	position: relative;
+	width: 100%;
+}
+
+#content > h1:first-child {
+	display: inline-block;
+	float: left;
+	width: 65%;
+}
+
+#content > h1:first-of-type {
+	margin-top:12px;
+	padding: 0;
+}
+
+/* Tighten space above and below title */
+#content > h1 {
+	margin-bottom: .25em;
+	padding: 0px;
+	width: 65%;
+}
+
+#content > #primary:not(:only-child) {
+	float: right;
+	margin-bottom: 0em;
+	padding: 1.5em 1.5em 1.5em 0;
+	width: 65%;
+}
+
+#secondary {
+	float: right;
+	width: 35%;
+	padding: 0 0 1.5em 1.5em;
+	word-wrap: break-word;
+}
+
+/* === CSS for the Items Show Page - Right Column ===
+--------------------------------------------------------- */
+.show #primary {
+	border-left: 1px dotted #ccc;
+	font-size: 14px;
+}
+
+.items.show #content h1 {
+	border-bottom: 4px solid;
+	color: #444444;
+	margin-bottom: 12px;
+	margin-left: 10px;
+  	padding-bottom: 4px;
+	width: 98%;
+}
+
+/* Color values for reference
+	#C41130; - garnet red
+	#729108; - green
+	#005596; - blue
+	#f29400; - orange
+	#A0218C; - wine (purple)
+	#508dba; - lighter blue
+	#989FA9; - gray
+*/
+
+.items.show #content h1.article {
+	border-color: #c41130;
+}
+
+.items.show #content h1.document {
+	border-color: #729108;
+}
+
+.items.show #content h1.image {
+	border-color: #005596;
+}
+
+.items.show #content h1.map {
+	border-color: #f29400;
+}
+
+.items.show #content h1.publication {
+	border-color: #A0218C;
+}
+
+.items.show #content h1.gallery {
+	border-color: #508dba;
+}
+
+/* Color bar that appears above item image thumbnail */
+.item-preview .item-img.article {
+	border-top: 4px solid #c41130; /* red */
+}
+
+.item-preview .item-img.document {
+	border-top: 4px solid #729108; /* green */
+}
+
+.item-preview .item-img.image {
+	border-top: 4px solid #005596; /* blue */
+}
+
+.item-preview .item-img.map {
+	border-top: 4px solid #f29400; /* orange */
+}
+
+.item-preview .item-img.publication {
+	border-top: 4px solid #A0218C; /* Wine (purple) */
+}
+
+.item-preview .item-img.gallery {
+	border-top: 4px solid #FBD400; /* Dark yellow */
+}
+
+/* don't display color bar and don't restrict height and width of cover image */
+.item-preview.cover-image .item-img {
+	border-top: none;
+	max-height: none;
+	width: auto;
+}
+
+.item-preview.cover-image .item-img img {
+	max-height: none;
+	padding: 0;
+	width: auto;
+}
+
+.relationships-table-view .search-col-title .item-img {
+	border-top: none;
+}
+
+.related-item-identifier {
+    color: #777;
+    font-size: 12px;
+}
+.related-items-section-name {
+	color: #444;
+	font-size: 16px;
+	font-weight:bold;
+	margin-bottom: 8px;
+	background: #f8f8f8; /* default for browsers w/o gradients */
+	background: -webkit-linear-gradient(to right, #d7d7d7, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	background: -moz-linear-gradient(to right, #d7d7d7, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	background: -o-linear-gradient(to right, #d7d7d7, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	background: linear-gradient(to right, #d7d7d7, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	margin-left: -24px;
+	padding: 8px 0 8px 24px;
+	border-bottom-style: none;
+}
+
+.related-items-main-section .related-items-section-name {
+	border-radius: 10px;
+	margin-left: -35px;
+	padding-left: 45px;
+}
+
+.related-items-subsection-header {
+	background: linear-gradient(to right, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	color: #777;
+	margin-bottom: 24px;
+	padding-left: 30px;
+	position: relative;
+}
+
+.related-items-subsection-header::after {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 20px;
+	height: 20px;
+	bottom: -10px;
+	left: 11%;
+	margin-left: -55px;
+	background-color: #e2e2e2;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 1;
+}
+
+.related-items-subsection .item-preview li {
+	margin-right: 12px;
+	width: 120px;
+}
+
+.related-items-subsection {
+	padding-left: 0;
+}
+
+.related-items-subsection p {
+	background: linear-gradient(to right, #e2e2e2, #e2e2e2, #f8f8f8, #ffffff);
+	color: #777;
+	font-size: 14px;
+	padding: 6px 0 6px 20px;
+	margin-left:-4px;;
+	border-bottom-style: none;
+}
+
+.related-items-subsection .item-preview .item-img {
+	max-height: 130px;
+	width: 120px;
+}
+
+.related-items-subsection .item-preview .item-img img {
+	max-height: 120px;
+}
+
+/* The lightbox that popsup when you click a green magnifying glass icon */
+.lightbox {
+	padding-right: 8px;
+}
+
+.lightbox::before {
+	color:#7ea115;
+	content: "\f002";
+	font-family: "FontAwesome";
+	font-size: 17px;
+}
+
+.lightbox:hover::before {
+	color: #557900;
+}
+
+/* OpenSeaDragon viewer */
+#openseadragon {
+	width: 98%;
+	height: 600px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	border: 1px;
+	border-style: dotted;
+	border-color: #e8e8e8;
+	background-color:#fff;
+	clear: both;
+}
+
+#zoom-button {
+	float: right;
+}
+
+#zoom-button-bar {
+	font-size: 14px;
+	padding-left: 8px;
+	height: 16px;
+}
+
+/* Magnific popup */
+.mfp-arrow:hover {
+	background: transparent none repeat scroll 0 0;
+	box-shadow: none;
+}
+
+/* Metadata elements */
+.element {
+	clear: both;
+	margin: 0 0 10px;
+}
+
+.element-set {
+	padding-left: 8px;
+}
+
+/* Draw line between multiple Subject or Title elements */
+.element .element-text:after {
+	background-color: #dbdbdb;
+	content: "";
+	display: block;
+	height: 1px;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	width: 20%;
+}
+
+.element .element-text:last-of-type:after {
+	height: 0px;
+	margin-bottom: 0;
+}
+
+/* Set standard bottom margin for text elements */
+.element-text {
+	margin-bottom:6px;
+	font-size: 14px;
+}
+
+.element-set label {
+	font-size: 18px;
+	font-variant: small-caps;
+	font-weight: normal;
+	line-height: 1.5em;
+}
+
+.element-text p {
+	font-size: 16px;
+	line-height: 1.5em;
+	word-wrap: break-word;
+	margin: 0 0 0em 0;
+}
+
+/* field is the metadata label element */
+.field {
+	clear: both;
+	margin-bottom: 0px;
+}
+
+/* Used for metadata field label */
+.field label, .field .label {
+	clear: left;
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+/* Set max height of primary image */
+.items #primary .item-file img,
+.files #primary .item-file img {
+	max-height: 450px;
+	max-width: 100%;
+	width: auto;
+}
+
+/* Reduce  padding between title and primary image */
+.items.show #content > #primary {
+	padding: 0px 24px 24px 24px;
+	width: 64%;
+}
+
+a.metadata-search-link {
+	color: #0073AA;
+}
+
+a.metadata-rights-link {
+	color: #666;
+}
+
+/* === Items Show - Left Column ===
+--------------------------------------------------------- */
+/* Tags */
+#item-tags {
+ 	margin-bottom:20px;
+}
+
+#item-tags h2 {
+ 	margin-bottom: 4px;
+}
+
+#item-citation {
+ 	padding-bottom: 6px;
+}
+
+#item-citation > .element-text {
+	line-height: 21px;
+	margin-top: 0px;
+}
+
+.citation-identifier {
+	padding-left: 4px;
+	font-weight: bold;
+}
+
+#geolocation h2 {
+	margin-bottom: 2px;
+}
+
+#itemfiles {
+	margin-bottom: 0;
+	overflow: hidden;
+}
+
+#itemfiles img,
+.files .item-file img {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
+	box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
+	margin: 0 0.375em 0.375em 0;
+	padding: 3px;
+}
+
+#itemfiles + * {
+ 	clear: left;
+}
+
+.items.show #content #secondary {
+	padding: 0 20px 0 12px;
+	width: 36%;
+}
+
+#secondary #itemfiles img {
+	border:none;
+	box-shadow: none;
+  	margin: 0;
+  	max-height: 80px;
+  	max-width: 100%;
+}
+
+#secondary .item-file {
+	border: 1px solid #ddd;
+  	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
+	display: inline-block;
+	height: 88px;
+	margin: 0 6px 6px 0;
+	max-height: 88px;
+	padding: 3px;
+	text-align: center;
+	vertical-align: top;
+  	width: 94px;
+}
+
+div.item {
+	clear: both;
+	overflow: hidden;
+	border-color: #ddd;
+	border-top-width: 0.07143em;
+	border-top-style: solid;
+	padding-top: 1.42857em;
+}
+
+div.item h2 {
+  	margin-top: 0em;
+}
+
+.items #primary .item-file img,
+.files #primary .item-file img {
+	max-width: 98%;
+	width: auto;
+}
+
+/* === Galleries CSS ===
+--------------------------------------------------------- */
+
+/* Back links for container items on Gallery page */
+#container-item-links {
+	clear: both;
+	margin-left: 12px;
+	padding-top: 8px;
+}
+
+#container-item-links .element-text {
+	margin-bottom: 2px;
+	margin-top: 4px;
+	padding-left: 24px;
+}
+
+#container-item-links .single-container-item {
+	padding-left: 8px;
+}
+
+.container-item-links-label {
+	color: #777;
+	font-size: 20px;
+	padding-bottom: 8px;
+}
+
+.container-description {
+	color: #777;
+	padding-left: 12px;
+}
+
+#container-item-links a {
+	font-family: "Roboto Condensed",sans-serif;
+}
+
+.container-item-links-label .element-text a:link {
+	font-size: 20px;
+}
+
+#container-item-links a:link {
+	color: #c76941;
+	text-decoration: none;
+}
+
+#container-item-links a:visited {
+	color: #c76941;
+}
+
+#container-item-links a:hover {
+	color: #e57f52;
+}
+
+#container-item-links a:active {
+	color: #c76941;
+}
+
+/* === Citation CSS ===
+--------------------------------------------------------- */
+#item-citation h2 {
+	margin: 16px 0 0 0;
+	padding: 0;
+}
+
+#item-citation.gallery {
+	margin-left: 12px;
+}
+
+#item-citation.gallery > .element-text {
+	width: 36%;
+}
+
+#item-citation.gallery::before {
+	background-color: #ccc;
+	content: "";
+	display: block;
+	height: 1px;
+	margin-top: 12px;
+}
+
+#item-citation h2 {
+	color:#555;
+}
+
+/* === Footer ===
+--------------------------------------------------------- */
+footer {
+	background-color: var(--background-color);
+	clear: both;
+	color: var(--link-color);
+}
+
+#footer a {
+ 	transition: color 0.2s ease 0s;
+}
+
+#footer a:link {
+ 	color: var(--link-color);
+}
+
+#footer a:visited {
+ 	color: var(--link-color);
+}
+
+#footer a:hover {
+ 	color: var(--link-hover-color);
+}
+
+.footerLinks {
+	float:right;
+	margin-right: 16px;
+}
+
+#footer-text {
+	max-width:960px;
+	padding: 1px 0 1px 10px;
+	width:100%;
+	font-size: 12px;
+}
+
+
+/* === CSS for Width less than 844px ===
+--------------------------------------------------------- */
+@media screen and (max-width: 844px) {
+	#primary,
+	#secondary,
+	#sidebar {
+		width: 100% !important;
+		border-right: 0 !important;
+		padding: 0 !important;
+	}
+
+	#content > #primary:not(:only-child) {
+		margin-bottom: 1.5em;
+	}
+
+	#secondary,
+	#sidebar {
+		border-left: 0;
+	}
+
+    body, #wrap {
+		margin: 0;
+		width: 100%;
+    }
+
+    #content > h1:first-of-type {
+		line-height:24px;
+		margin-top:8px;
+		width:100%;
+    }
+
+    .five.columns {
+    	width: 70%;
+    }
+
+    /* Handle indent of multiple Title or Subject lines on items/show page */
+    .offset-by-three.column,
+    .offset-by-three.columns {
+    	margin-left: 24.5%;
+    }
+
+    #primary {
+    	max-width: 844px;
+    }
+
+    /* search box in banner */
+    #simple-search-container {
+		margin-bottom: 0;
+		margin-right: 0;
+		position: relative;
+		width: 98%;
+    }
+
+    #simple-search-container input[type="text"] {
+     	width: 100%;
+    }
+
+    #simple-search-container button, #simple-search-container .button {
+		position: absolute;
+		right: 0px;
+    }
+
+    #simple-search-container a {
+     	line-height: 30px;
+    }
+
+    .modify-search-button,
+    .small.blue.button.modify-search-button {
+		clear: both;
+		float: left;
+    }
+
+    .two.columns {
+		width: 129px;
+    }
+}
+
+/* === CSS for Width < 600px (Mobile Landscape) ===
+--------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+	#admin-bar > ul > li {
+		box-shadow: none;
+		border-color: transparent;
+	}
+
+	#admin-bar .navigation li a {
+		width: inherit;
+	}
+
+	#banner-image {
+		width: 100%;
+	}
+
+	.five.columns {
+		width: 90%;
+	}
+
+	#nav-toggle {
+		background-color: var(--background-color);
+		cursor:pointer;
+		display: block;
+		float: left;
+		height: 40px;
+		margin: 0 auto;
+		padding: 2px 4%;
+		width: 100%;
+	}
+
+	#nav-toggle span {
+		color: var(--link-color);
+	}
+
+	#nav-toggle span:before {
+		content: "\f0c9";
+		font-family: "FontAwesome";
+		font-size: 20px;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	.navigation {
+		position: relative;
+	}
+
+	.navigation li {
+		display: block;
+		width: 100%;
+		border-color: rgba(255, 255, 255, 0.15);
+		border-color: #2a0300;
+		border-bottom-width: 0.07143em;
+		border-bottom-style: solid;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		padding-bottom: -0.07143em;
+	}
+	.navigation li a {
+		width: 100%;
+	}
+	.navigation li:last-of-type {
+		border-color: transparent;
+	}
+
+	.nav-item > a {
+		border-style: solid;
+		border-width: 0 0 1px;
+		border-color: #2a0300;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		font-size: 16px;
+		padding: 10px 13px;
+	}
+
+	/* Hide alphabet search list index on phones */
+	.search-index-view-index {
+		display: none;
+	}
+
+	/* Advanced Search form */
+	.search-form-section.four.columns {
+		margin-left: 0;
+		width: 92%;
+	}
+
+	#search-filter-form .eight.columns {
+		width: 92%;
+	}
+
+	#top-nav {
+		display: none;
+		margin-top: 0;
+		padding-bottom: 0px;
+	}
+
+	#top-nav .nav-menu ul, #top-nav .nav-menu ul li {
+		width: 100%;
+	}
+
+	#top-nav > .nav-menu li ul {
+		position: inherit;
+		margin-top: 0;
+	}
+
+	#top-nav > .nav-menu ul ul ul {
+		width: 95%;
+		left: 5%;
+	}
+
+	#top-nav > .nav-menu > ul > li > a  {
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	}
+
+	#top-nav > .nav-menu ul li > a:not(:only-child) span:after {
+		content: '\f0c9';
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		z-index: 251;
+		-moz-transition:all .2s ease-in-out; -o-transition:all .2s ease-in-out;
+		-webkit-transition:all .2s ease-in-out; transition:all .2s ease-in-out;
+	}
+
+	#top-nav > .nav-menu ul li:hover > a:not(:only-child) span:after {
+		top:20px; opacity:0;
+	}
+
+	#top-nav > .nav-menu ul li > a:not(:only-child) span {
+		padding-right:18px;
+	}
+
+	#top-nav > .nav-menu > ul ul > li a:not(:only-child) span:after {
+		transform: rotate(0); -ms-transform: rotate(0); -webkit-transform: rotate(0);
+	}
+
+	#top-nav li.nav-menu-main-search {
+		max-width: none;
+	}
+}
+
+/* === CSS for Width < 480px (Mobile Portrait )===
+--------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+	#content {
+		padding: .5em .4em;
+	}
+
+	h1 {
+		line-height: 20px;
+		margin-bottom: .5em;
+	}
+
+	/* Handle indent of multiple Title or Subject lines */
+		.offset-by-three.column,
+		.offset-by-three.columns {
+		margin-left: 4%;
+	}
+
+	/* Advanced Search form */
+	.search-filter-form .seven.columns {
+		width: 95%;
+	}
+
+	.search-filter-form .two.columns,
+	.search-filter-form .five.columns {
+		width: 100%;
+	}
+
+	.search-filter-form input[type=text] {
+		width: 100%;
+	}
+}
