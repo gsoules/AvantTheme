@@ -3,24 +3,19 @@
 AvantTheme provides:
 
 * Layout, styling, and graphics for public facing pages
-* Controls for simple search, subject search, and advanced search (replaces Omeka's search controls)
-* [Galleries](http://swhplibrary.net/archive/gallery/)
-* Support for the Lightbox feature (using the [AvantCustom](https://github.com/gsoules/AvantCustom) plugin)
-* Support for the [Zoomable images feature](http://swhplibrary.net/digitalarchive/find?tags=zoomable&view=4) (using the AvantCustom plugin) and [OpenSeadragon](https://openseadragon.github.io/).
+* Controls for simple search, subject search, and advanced search (using the [AvantSearch](https://github.com/gsoules/AvantSearch) plugin to replace Omeka's search controls)
+* Support for [Galleries](http://swhplibrary.net/archive/gallery/)
+* Support for the Lightbox feature (using the [AvantCustom](https://github.com/gsoules/AvantCustom) plugin and [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup/))
+* Support for the [Zoomable images feature](http://swhplibrary.net/digitalarchive/find?tags=zoomable&view=4) (using the [AvantCustom](https://github.com/gsoules/AvantCustom) plugin and [OpenSeadragon](https://openseadragon.github.io/)).
 * Custom 404 error page
 
-AvantTheme was derived from the [SWHPL](https://github.com/gsoules/swhpl) theme, but contains no [Southwest Harbor Public Library](http://www.swhplibrary.org/) specific styling or URL references. 
-
 ## Dependencies
-AvantTheme depends on the following plugins:.
+AvantTheme depends on the following plugins. The theme will report an error if the plugins are not installed and active.
 
 * [AvantCustom](https://github.com/gsoules/AvantCustom)
-* [AvantElements](https://github.com/gsoules/AvantElements)
 * [AvantSearch](https://github.com/gsoules/AvantSearch)
 
 ## Installation
-
-AvantTheme requires that the plugins listed above be installed. If any of the plugins is not installed, the theme will not appear or behave correctly.
 
 To install the AvantTheme, follow these steps:
 

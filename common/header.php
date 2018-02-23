@@ -39,6 +39,17 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     ?>
 </head>
 
+<?php
+$dependentPluginsActive = plugin_is_active('AvantCustom') && plugin_is_active('AvantSearch');
+if (!$dependentPluginsActive)
+{
+    echo '<body>';
+    echo '<h2 style="color:red;">AvantTheme requires that the AvantCustom and AvantSearch plugins be installed.</h2>';
+    echo '</body>';
+    return;
+}
+?>
+
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
