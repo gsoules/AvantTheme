@@ -540,6 +540,11 @@ th, td {
  	display: none;
 }
 
+/* Hide "Home > <page-name>" */
+#simple-pages-breadcrumbs {
+	display: none;
+}
+
 
 /* === General Content Area CSS ===
 --------------------------------------------------------- */
