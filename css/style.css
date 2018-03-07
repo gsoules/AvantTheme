@@ -103,7 +103,17 @@ input
 	margin: 0px;
 }
 
-/* General green button style used on Search form and Search results */
+/* Search Results */
+
+.search-header-identifier {
+	min-width: 100px;
+}
+
+.search-col-identifier {
+	text-align: left;
+	width: 100px;
+}
+
 button,
 .search-results-layout-options-button,
 .search-view-toggle-button {
