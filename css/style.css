@@ -105,11 +105,11 @@ input
 
 /* Search Results */
 
-.search-header-identifier {
+.search-th-identifier {
 	min-width: 100px;
 }
 
-.search-col-identifier {
+.search-td-identifier {
 	text-align: left;
 	width: 100px;
 }
@@ -690,7 +690,7 @@ th, td {
 	width: auto;
 }
 
-.relationships-table-view .search-col-title .item-img {
+.relationships-table-view .search-td-title .item-img {
 	border-top: none;
 }
 
