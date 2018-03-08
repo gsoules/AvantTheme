@@ -3,7 +3,7 @@
 // Force PHP errors to be displayed even if the server settings want to hide them.
 ini_set('display_errors', true);
 
-$dependentPluginsActive = plugin_is_active('AvantCustom') && plugin_is_active('AvantSearch');
+$dependentPluginsActive = plugin_is_active('AvantCustom');
 
 $identifier = ItemView::getItemIdentifier($item);
 $zoomDataSources = array();

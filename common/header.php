@@ -40,11 +40,11 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
 </head>
 
 <?php
-$dependentPluginsActive = plugin_is_active('AvantCustom') && plugin_is_active('AvantSearch');
+$dependentPluginsActive = plugin_is_active('AvantCustom');
 if (!$dependentPluginsActive)
 {
     echo '<body>';
-    echo '<h2 style="color:red;">AvantTheme requires that the AvantCustom and AvantSearch plugins be installed.</h2>';
+    echo '<h2 style="color:red;">AvantTheme requires that the AvantCustom plugin be installed.</h2>';
     echo '</body>';
     return;
 }
@@ -55,16 +55,21 @@ if (!$dependentPluginsActive)
     <div id="wrap">
 
         <header id="header" role="banner">
-
             <div id="simple-search-container" role="search">
                 <?php
-                echo Custom::emitSearchForm();
-                echo '<a class="simple-search-subject-link" href="' . WEB_ROOT . '/find/subject">Subject Search</a>';
-                echo '<a class="simple-search-advanced-link" href="' . WEB_ROOT . '/find/advanced">Advanced Search</a>';
+                if (plugin_is_active('AvantSearch'))
+                {
+                    echo AvantSearchPlugin::emitSearchForm();
+                }
+                else
+                {
+                    $advancedOption = get_theme_option('use_advanced_search');
+                    echo search_form(array('show_advanced' => $advancedOption === null || $advancedOption == true));
+                }
                 ?>
             </div>
 
-			<div id="masthead">
+            <div id="masthead">
 				<div id="branding" role="banner">
                     <?php echo link_to_home_page(theme_logo()); ?>
                     <div style="clear:both;"></div>
