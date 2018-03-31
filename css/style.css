@@ -775,14 +775,14 @@ th, td {
 	padding-right: 8px;
 }
 
-.lightbox::before {
+.lightbox-icon::before {
 	color:#7ea115;
 	content: "\f002";
 	font-family: "FontAwesome";
 	font-size: 17px;
 }
 
-.lightbox:hover::before {
+.lightbox-icon:hover::before {
 	color: #557900;
 }
 

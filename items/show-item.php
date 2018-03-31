@@ -19,7 +19,7 @@ if ($zoomingEnabled)
     if (count($itemFiles) > 0)
     {
         echo '<div id="item-files" class="element">';
-        $imageHtml = file_markup($itemFiles[0], array('imageSize' => 'fullsize', 'linkAttributes' => array('target' => '_blank')));
+        $imageHtml = file_markup($itemFiles[0], array('imageSize' => 'fullsize', 'linkAttributes' => array('class' => 'lightbox')));
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
     }
@@ -62,7 +62,7 @@ if ($zoomingEnabled)
             // Show all but the first file in the secondary area.
             unset($itemFiles[0]);
         }
-        $imageHtml = file_markup($itemFiles, array('imageSize' => 'fullsize', 'linkAttributes' => array('target' => '_blank')));
+        $imageHtml = file_markup($itemFiles, array('imageSize' => 'fullsize', 'linkAttributes' => array('class' => 'lightbox')));
         ?>
         <?php if ($itemFiles): ?>
             <div class="element-text"><?php echo $imageHtml; ?></div>
