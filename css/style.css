@@ -1,8 +1,8 @@
 /* Edit these color values to change the overall color scheme. */
 :root {
-	--background-color: #ebf3ff;
-	--link-color: #3d5a98;
-	--link-hover-color: #7596b9;
+	--background-color: #F7EFE4;
+	--link-color: #89181E;
+	--link-hover-color: #E2BFBD;
 }
 
 html {
@@ -112,6 +112,23 @@ input
 .search-td-identifier {
 	text-align: left;
 	width: 100px;
+}
+
+.search-th-catalogue- {
+	min-width: 100px;
+}
+
+.search-td-catalogue- {
+	text-align: left;
+	width: 100px;
+}
+
+.search-results-detail-col2 {
+	display: none;
+}
+
+.search-results-detail-col3 {
+	width: 70%;
 }
 
 button,
@@ -773,17 +790,6 @@ th, td {
 /* The lightbox that popsup when you click a green magnifying glass icon */
 .lightbox {
 	padding-right: 8px;
-}
-
-.lightbox-icon::before {
-	color:#7ea115;
-	content: "\f002";
-	font-family: "FontAwesome";
-	font-size: 17px;
-}
-
-.lightbox-icon:hover::before {
-	color: #557900;
 }
 
 /* OpenSeaDragon viewer */
