@@ -19,10 +19,7 @@ if ($zoomingEnabled)
     if (count($itemFiles) > 0)
     {
         echo '<div id="item-files" class="element">';
-        $file = $itemFiles[0];
-        $isImageFile = substr($file->mime_type, 0, 6) == 'image/';
-        $class = $isImageFile ?  'lightbox' : 'download-file document-icon';
-        $imageHtml = file_markup($itemFiles[0], array('imageSize' => 'fullsize', 'linkAttributes' => array('class' => $class, 'target' => '_blank')));
+        $imageHtml = ItemView::getFileHtml($itemFiles[0], false);
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
     }
@@ -65,8 +62,13 @@ if ($zoomingEnabled)
             // Show all but the first file in the secondary area.
             unset($itemFiles[0]);
         }
-        $imageHtml = file_markup($itemFiles, array('imageSize' => 'thumbnail', 'linkAttributes' => array('class' => 'lightbox')));
+        $imageHtml = '';
+        foreach ($itemFiles as $itemFile)
+        {
+            $imageHtml .= ItemView::getFileHtml($itemFile, true);
+        }
         ?>
+
         <?php if ($itemFiles): ?>
             <div class="element-text"><?php echo $imageHtml; ?></div>
         <?php endif; ?>
