@@ -25,6 +25,14 @@ To install the AvantTheme, follow these steps:
 4. Configure the theme to provide a Logo File and Footer Text (if desired). The Logo File should be 80px tall and up to 600 px wide.
 5. Edit the CSS variables at the top of the style.css file to provide colors for the page background and links.
 
+## Usage
+AvantTheme was designed to be used with AvantSearch and AvantRelationships and as such, does not utilize most of the
+configuation options used by other themes. In addition to the Log File and Footer Text options, it provides a
+CSS File Name option that lets you specify the name of a CSS file that overrides the theme's style.css.
+
+* **CSS File Name** - By creating your own CSS file and placing it in the theme folder's CSS folder, you can easily make CSS
+ changes without having to edit style.css. This approach makes it very easy to see and maintain changes that you have made.
+
 ##  License
 
 This theme is published under [GNU/GPL].

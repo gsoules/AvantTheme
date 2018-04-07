@@ -1,8 +1,8 @@
 /* Edit these color values to change the overall color scheme. */
 :root {
-	--background-color: #F7EFE4;
-	--link-color: #89181E;
-	--link-hover-color: #E2BFBD;
+	--background-color: #eee;
+	--link-color: #3d5a98;
+	--link-hover-color: #7596b9;
 }
 
 html {
@@ -711,10 +711,6 @@ th, td {
 	border-top: none;
 }
 
-.related-item-identifier {
-    color: #777;
-    font-size: 12px;
-}
 .related-items-section-name {
 	color: #444;
 	font-size: 16px;

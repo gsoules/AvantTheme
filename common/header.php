@@ -28,6 +28,19 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     queue_css_url('//fonts.googleapis.com/css?family=Cabin');
     queue_css_file('iconfonts');
     queue_css_file('style');
+
+    $customCss = explode('.', get_theme_option('Custom CSS'))[0];
+    if (!empty($customCss))
+    {
+        try
+        {
+            queue_css_file($customCss);
+        }
+        catch (InvalidArgumentException $e)
+        {
+        }
+    }
+
     echo head_css();
     ?>
 

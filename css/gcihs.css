@@ -1,0 +1,27 @@
+:root {
+    --background-color: #F7EFE4;
+    --link-color: #89181E;
+    --link-hover-color: #E2BFBD;
+}
+
+.search-td-image .item-preview-header {
+    padding-left: 4px;
+    width: 160px;
+}
+
+.search-th-catalogue- {
+    min-width: 100px;
+}
+
+.search-td-catalogue- {
+    text-align: left;
+    width: 100px;
+}
+
+.search-results-detail-col2 {
+    display: none;
+}
+
+.search-results-detail-col3 {
+    width: 70%;
+}
