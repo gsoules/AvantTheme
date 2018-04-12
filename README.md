@@ -2,28 +2,31 @@
 
 AvantTheme provides:
 
+* Controls for simple search, subject search, and advanced search using the [AvantSearch](https://github.com/gsoules/AvantSearch) plugin
+* Support for [Galleries](http://swhplibrary.net/archive/gallery/) using the [AvantRelationships](https://github.com/gsoules/AvantRelationships) plugin
+* Support for the lightbox feature using the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin
+* Support for zoomable images using the [AvantZoom](https://github.com/gsoules/AvantCustom) plugin
 * Layout, styling, and graphics for public facing pages
-* Controls for simple search, subject search, and advanced search (using the [AvantSearch](https://github.com/gsoules/AvantSearch) plugin to replace Omeka's search controls)
-* Support for [Galleries](http://swhplibrary.net/archive/gallery/)
-* Support for the Lightbox feature (using the [AvantCustom](https://github.com/gsoules/AvantCustom) plugin and [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup/))
-* Support for the [Zoomable images feature](http://swhplibrary.net/digitalarchive/find?tags=zoomable&view=4) (using the [AvantCustom](https://github.com/gsoules/AvantCustom) plugin and [OpenSeadragon](https://openseadragon.github.io/)).
 * Custom 404 error page
 
 ## Dependencies
-AvantTheme depends on the following plugins. The theme will report an error if the plugins are not installed and active.
+AvantTheme depends on the [AvantCommon](https://github.com/gsoules/AvantCcmmon) plugin. An error will occur if the
+plugin is not installed.
 
-* [AvantCustom](https://github.com/gsoules/AvantCustom)
-* [AvantSearch](https://github.com/gsoules/AvantSearch)
+AvantTheme was designed to work with the various plugins listed in the introduction above. If any are not installed
+and activated, the corresponding feature won't appear, but no error will occur.
 
 ## Installation
 
 To install the AvantTheme, follow these steps:
 
+1. First install and activate the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin.
+1. Configure the AvantCommon plugin to specify your item identifier and title elements.
 1. Unzip the AvantTheme-master file into your Omeka installation's theme directory.
-2. Rename the folder to avant.
-3. Set the theme as the current theme from Omeka's Appearance > Themes page.
-4. Configure the theme to provide a Logo File and Footer Text (if desired). The Logo File should be 80px tall and up to 600 px wide.
-5. Edit the CSS variables at the top of the style.css file to provide colors for the page background and links.
+1. Rename the folder to avant.
+1. Set the theme as the current theme from Omeka's Appearance > Themes page.
+1. Configure the theme to provide a Logo File and Footer Text (if desired). The Logo File should be 80px tall and up to 600 px wide.
+1. Edit the CSS variables at the top of the style.css file to provide colors for the page background and links.
 
 ## Usage
 AvantTheme was designed to be used with AvantSearch and AvantRelationships and as such, does not utilize most of the
