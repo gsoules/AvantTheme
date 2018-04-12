@@ -1,9 +1,8 @@
 <?php
-$type = Custom::getItemBaseType($item);
-$class = empty($type) ? '' : " class=\"$type\"";
+echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
-<h1<?php echo $class; ?>><?php echo metadata($item, array('Dublin Core', 'Title')); ?></h1>
+<h1 class="gallery"><?php echo metadata($item, array('Dublin Core', 'Title')); ?></h1>
 
 <?php
 $relatedItemsModel = new RelatedItemsModel($item, $this);
@@ -71,8 +70,8 @@ foreach ($relatedItems as $relatedItem)
         continue;
 
     // Display the gallery item.
-    $itemView = new ItemView($galleryItem);
-    echo $itemView->emitItemPreviewAsListElement();
+    $itemPreview = new ItemPreview($galleryItem);
+    echo $itemPreview->emitItemPreviewAsListElement();
 }
 ?>
 </ul>
