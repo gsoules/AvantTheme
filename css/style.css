@@ -123,14 +123,6 @@ input
 	width: 100px;
 }
 
-.search-results-detail-col2 {
-	display: none;
-}
-
-.search-results-detail-col3 {
-	width: 70%;
-}
-
 button,
 .search-results-layout-options-button,
 .search-view-toggle-button {
@@ -781,40 +773,6 @@ th, td {
 
 .related-items-subsection .item-preview .item-img img {
 	max-height: 120px;
-}
-
-/* The lightbox that popsup when you click a green magnifying glass icon */
-.lightbox {
-	padding-right: 8px;
-}
-
-/* OpenSeaDragon viewer */
-#openseadragon {
-	width: 98%;
-	height: 600px;
-	margin-bottom: 4px;
-	margin-left: 10px;
-	border: 1px;
-	border-style: dotted;
-	border-color: #e8e8e8;
-	background-color:#fff;
-	clear: both;
-}
-
-#zoom-button {
-	float: right;
-}
-
-#zoom-button-bar {
-	font-size: 14px;
-	padding-left: 8px;
-	height: 16px;
-}
-
-/* Magnific popup */
-.mfp-arrow:hover {
-	background: transparent none repeat scroll 0 0;
-	box-shadow: none;
 }
 
 /* Metadata elements */

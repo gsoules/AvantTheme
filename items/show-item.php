@@ -1,33 +1,48 @@
 <?php
+$viewerScript = plugin_is_active('AvantZoom') ? ImageZoom::generateOpenSeadragonViewer($item) : '';
+$zoomingEnabled = !empty($viewerScript);
 
-$type = Custom::getItemBaseType($item);
-$class = empty($type) ? '' : " class=\"$type\"";
-echo '<h1' . $class . '>' . metadata($item, array('Dublin Core', 'Title'), array('no_filter' => true)) . '</h1>';
-
-$viewerScript = '';
-$zoomingEnabled = count($zoomDataSources) >= 1;
 if ($zoomingEnabled)
 {
-    $viewerScript = Custom::emitZoomScript($identifier, $zoomDataSources);
+    // This must be emitted before the call to the head() function below.
+    queue_js_file('openseadragon.min');
+}
+
+$title = ItemMetadata::getItemTitle($item);
+echo head(array('title' => $title, 'bodyclass' => 'items show'));
+
+$type = '';
+$itemType = ItemMetadata::getItemElementMetadata($item, array('Dublin Core', 'Type'));
+if ($itemType)
+{
+    // Get just the first part of a hierarchical type value e.g. just "Document" from "Document, Letter".
+    $parts = explode(',', $itemType);
+    $type = strtolower(trim($parts[0]));
+}
+$class = empty($type) ? '' : " class=\"$type\"";
+echo '<h1' . $class . '>' . $title . '</h1>';
+
+if ($zoomingEnabled)
+{
     echo '<div id="openseadragon"></div>';
-}?>
+}
+?>
 
 <div id="primary">
     <?php
-
     $itemFiles = $item->Files;
     if (count($itemFiles) > 0)
     {
         echo '<div id="item-files" class="element">';
-        $imageHtml = ItemView::getFileHtml($itemFiles[0], false);
+        $imageHtml = ItemPreview::getFileHtml($itemFiles[0], false);
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
     }
 
     if ($zoomingEnabled)
     {
-        echo '<div id="zoom-button-bar">';
-        echo '<a id="zoom-button" href="#"></a>';
+        echo '<div id="zoom-toggle">';
+        echo '<a id="zoom-toggle-link" href="#"></a>';
         echo '</div>';
     }
 
@@ -35,7 +50,7 @@ if ($zoomingEnabled)
 
     // If this item has a cover image, that image will appear in the sidebar, so pass it to
     // admin_items_show to indicate that the image should be excluded from the list of related items.
-    $excludeItem = ItemView::getCoverImageItem($item);
+    $excludeItem = ItemPreview::getCoverImageItem($item);
     echo get_specific_plugin_hook_output('AvantCustom', 'admin_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem));
     echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem));
     ?>
@@ -43,13 +58,13 @@ if ($zoomingEnabled)
 
 <div id="secondary">
     <?php
-        $coverImageItem = ItemView::getCoverImageItem($item);
+        $coverImageItem = ItemPreview::getCoverImageItem($item);
         if (!empty($coverImageItem)) {
             ?>
             <div class="item-preview cover-image">
                 <?php
-                $itemView = new ItemView($coverImageItem);
-                echo $itemView->emitItemPreview($coverImageItem);
+                $itemPreview = new ItemPreview($coverImageItem);
+                echo $itemPreview->emitItemPreview($coverImageItem);
                 ?>
             </div>
     <?php } ?>
@@ -65,7 +80,7 @@ if ($zoomingEnabled)
         $imageHtml = '';
         foreach ($itemFiles as $itemFile)
         {
-            $imageHtml .= ItemView::getFileHtml($itemFile, true);
+            $imageHtml .= ItemPreview::getFileHtml($itemFile, true);
         }
         ?>
 
@@ -101,55 +116,10 @@ if ($zoomingEnabled)
     ?>
 </div>
 
-<?php if ($zoomingEnabled): ?>
-    <script type="text/javascript">
-        jQuery(document).ready(function ()
-        {
-            <?php echo $viewerScript; ?>
-
-            // Style the zoom navigator dynamically to override its hard-coded element styles.
-            var zoomNavigator = jQuery('.navigator');
-            zoomNavigator.css({'background-color': 'transparent'});
-            zoomNavigator.css({'border-width': '1px'});
-
-            // Override h1 styling when on a page having a zoomable image.
-            jQuery('h1').css({'margin-bottom': '4px'});
-
-            var zoomButton = jQuery('#zoom-button');
-            var zoomViewerContainer = jQuery('#openseadragon');
-            var itemFile = jQuery('#item-files');
-            var itemFiles = jQuery('#itemfiles');
-
-            // Don't initially show the zoomable image on mobile devices where users may want to
-            // scroll the page, but do so while touching the zoom viewer which only pans the image.
-            var isMobile = /Mobi/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent);
-            var showingzoomViewer = !isMobile;
-
-            var buttonTextHide = '<?php echo __('Turn Image Zoom Off'); ?>';
-            var buttonTextShow= '<?php echo __('Turn Image Zoom On'); ?>';
-
-            if (showingzoomViewer)
-            {
-                zoomButton.text(buttonTextHide);
-                itemFile.hide();
-                itemFiles.hide();
-            }
-            else
-            {
-                zoomButton.text(buttonTextShow);
-                zoomViewerContainer.hide();
-            }
-
-            zoomButton.click(function(e)
-            {
-                e.preventDefault();
-                showingzoomViewer = !showingzoomViewer;
-                zoomViewerContainer.toggle();
-                itemFile.toggle();
-                itemFiles.toggle();
-                zoomButton.text(showingzoomViewer ? buttonTextHide : buttonTextShow);
-            });
-        });
-    </script>
-<?php endif; ?>
+<?php
+if ($zoomingEnabled)
+{
+    echo $this->partial('avantzoom-script.php', array('viewerScript' => $viewerScript));
+}
+?>
 

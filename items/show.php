@@ -1,36 +1,22 @@
 <?php
-
-// Force PHP errors to be displayed even if the server settings want to hide them.
+// Force PHP errors to be displayed for debuggin even if the server settings want to hide them.
 ini_set('display_errors', true);
 
-$dependentPluginsActive = plugin_is_active('AvantCustom');
-
-$identifier = ItemView::getItemIdentifier($item);
-$zoomDataSources = array();
-
-if (count($item->Files) >= 1 && $dependentPluginsActive)
+if (!plugin_is_active('AvantCommon'))
 {
-    $zoomDataSources = Custom::getZoomDataSources($identifier);
-}
-
-if (count($zoomDataSources) >= 1)
-{
-    queue_js_file('openseadragon.min');
-}
-
-echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
-
-if (!$dependentPluginsActive)
+    echo head(array('title' => 'ERROR'));
     return;
+}
 
-$itemType = metadata($item, array('Dublin Core', 'Type'), array('no_filter' => true));
-if ($itemType == 'Gallery')
+$itemType = ItemMetadata::getItemElementMetadata($item, array('Dublin Core', 'Type'));
+
+if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
 {
     echo $this->partial('/items/show-gallery.php', array('item' => $item));
 }
 else
 {
-    echo $this->partial('/items/show-item.php', array('item' => $item, 'identifier' => $identifier, 'zoomDataSources' => $zoomDataSources));
+    echo $this->partial('/items/show-item.php', array('item' => $item));
 }
 
 echo foot();

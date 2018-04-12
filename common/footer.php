@@ -17,16 +17,9 @@
 		jQuery("#nav-toggle").click(function(){
 			jQuery("#top-nav").slideToggle(function(){ if (state) {jQuery(this).removeAttr( 'style' )}; state = ! state; } );
 		});
-        jQuery('.lightbox').magnificPopup(
-            {
-                type: 'image',
-                gallery:{
-                    enabled:true
-                }
-            }
-        );
     });
     </script>
 
+<?php echo $this->partial('avantcommon-script.php'); ?>
 </body>
 </html>
