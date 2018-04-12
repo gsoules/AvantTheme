@@ -1,6 +1,20 @@
 <?php
-$elementDisplay = new ElementDisplay();
-$elementSet = $elementDisplay->orderElementsForDisplay($elementsForDisplay);
+if (plugin_is_active('AvantElements'))
+{
+    $elementDisplay = new ElementDisplayOrder();
+    $elementSet = $elementDisplay->orderElementsForDisplay($elementsForDisplay);
+}
+else
+{
+    $elementSet = array();
+    foreach ($elementsForDisplay as $set)
+    {
+        foreach ($set as $elementName => $elementInfo)
+        {
+            $elementSet[$elementName] = $elementInfo;
+        }
+    }
+}
 ?>
 
 <div class="element-set">
