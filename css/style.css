@@ -3,6 +3,9 @@
 	--background-color: #eee;
 	--link-color: #3d5a98;
 	--link-hover-color: #7596b9;
+	--nav-link-color: #777;
+	--nav-link-hover-color: #999;
+    --nav-background-hover-color: #7596b9;
 }
 
 html {
@@ -103,29 +106,7 @@ input
 	margin: 0px;
 }
 
-/* Search Results */
-
-.search-th-identifier {
-	min-width: 100px;
-}
-
-.search-td-identifier {
-	text-align: left;
-	width: 100px;
-}
-
-.search-th-catalogue- {
-	min-width: 100px;
-}
-
-.search-td-catalogue- {
-	text-align: left;
-	width: 100px;
-}
-
-button,
-.search-results-layout-options-button,
-.search-view-toggle-button {
+button {
 	background: rgba(0,0,0,0) linear-gradient(to bottom, #7ea115, #608002) repeat scroll 0 0;
 	border: 1px solid #7ea115;
 	-webkit-box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
@@ -135,9 +116,7 @@ button,
 	padding: 3px 8px;
 }
 
-button:hover,
-.search-results-layout-options-button:hover,
-.search-view-toggle-button:hover {
+button:hover {
 	-webkit-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
 	-moz-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
 	box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
@@ -167,9 +146,8 @@ a.button:hover {
 	background-color: #706b34;
 }
 
-/* Input buttons (submit) and Modify Search button (a) */
-input[type=submit],
-.modify-search-button {
+/* Input buttons (submit) */
+input[type=submit] {
 	background: rgba(0,0,0,0) linear-gradient(to bottom, #376c8b, #29536b) repeat scroll 0 0;
 	border: 1px solid #29536b;
 	-webkit-box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
@@ -184,8 +162,7 @@ input[type=submit],
 	width: 150px;
 }
 
-input[type=submit]:hover,
-.modify-search-button:hover {
+input[type=submit]:hover {
 	-webkit-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
 	-moz-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
 	box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
@@ -275,7 +252,7 @@ th, td {
 	margin-left: 0;
 }
 
-/* two and five are used for the metadata on items/show and for label / field pairs on advanced and subject search */
+/* two and five are used for the metadata on items/show */
 .two.columns {
 	width: 22%;
 }
@@ -337,189 +314,6 @@ th, td {
 	display: table;
 }
 
-/* === Search Box in banner ===
---------------------------------------------------------- */
-#simple-search-container {
-  margin-right: 12px;
-	padding: 16px 10px 0px 6px;
-	position: absolute;
-	right:0;
-	text-align: right;
-	width: 30%;
-	z-index: 250;
-}
-
-#simple-search-container a {
-	color: var(--link-color);
-	font-size: 16px;
-}
-
-#simple-search-container a:hover {
-	color: var(--link-hover-color);
-}
-
-#simple-search-container a:link,
-#simple-search-container a:visited {
-	text-decoration: none;
-}
-
-#simple-search-container button {
-	border: none;
-	box-shadow: none;
-	padding: 0.25em;
-	position: relative;
-	text-indent: -9999px; /* move default text out of the way */
-	width: 32px;
-}
-
-#simple-search-container button::after {
-	background-color: #29536b;
-	bottom: 0;
-	content: "\f002";
-	font-family: "FontAwesome";
-	left: 0;
-	line-height: 28px;
-	position: absolute;
-	text-indent: 0;
-	top: 0;
-	width: 32px;
-}
-
-#simple-search-container button:hover::after {
-    background-color: #5f5f5f;
-}
-
-#simple-search-container form {
-	margin: 0.375em 0;
-}
-
-#simple-search-container input {
-	vertical-align: top;
-	margin: 0;
-}
-
-#simple-search-container input[type=text] {
-	float: left;
-	width: 240px;
-}
-
-#simple-search-container .simple-search-subject-link {
-	float: left;
-}
-
-/* ------- Advanced Search page styling that is specific to this theme. ------*/
-#search-filter-form {
-	font-family: "Lato", sans-serif;
-}
-
-.table-view-layout-option select {
-	width: 160px;
-}
-
-.table-view-limit-option select {
-	width: 60px;
-}
-
-/* add a little padding before the Field filter text box */
-#search-filter-form .advanced-search-terms {
-	margin-top:8px;
-}
-
-#search-filter-form input[type=text] {
-  	border: 1px solid #d8d8d8;
-  	box-shadow: 0 0 .25em #d6d6d6 inset;
-  	display: inline-block;
-  	font-size: 14px;
-  	height: 30px;
-  	line-height: 20px;
-  	max-width: 100%;
-  	min-height: 2em;
-  	padding: 0.375em;
-  	width:100%;
-}
-
-#search-filter-form label {
-    font-size: 16px;
-    margin-right: 0px;
-    margin-bottom: 4px;
-}
-
-.search-radio-buttons label,
-.search-form-view-selector label {
-	clear: left;
-	float: left;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 10px;
-	padding: 0 0 8px 24px;;
-}
-
-#primary .search-radio-buttons {
-	line-height: 18px;
-	margin: 0 0 8px 0;
-	padding: 8px 0;
-}
-
-#primary .search-radio-buttons label {
-	padding-left: 0;
-}
-
-#secondary h2 {
-    color:#555;
-}
-
-#secondary .search-radio-buttons,
-.search-form-view-selector {
-	margin-bottom: 8px;
-	padding: 8px 0;
-}
-
-#search-title-only .search-radio-buttons {
-	margin-bottom: 40px;
-}
-
-#search-selects {
-  	margin-top: 12px;
-}
-
-/* Buttons for Add a Field and Remove field */
-.add_search {
-  	margin-top: 6px;
-  	margin-bottom: 12px;
-}
-
-/* Remove field button - styled red */
-.search-form-section .remove_search {
-	background: rgba(0,0,0,0) linear-gradient(to bottom, #ad6345, #7d422a) repeat scroll 0 0;
-	border: 1px solid #7e432c;
-	-webkit-box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
-	-moz-box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
-	box-shadow: 0 3px 3px 0 #b87979 inset, 0 -2px 2px 0 #535030 inset, 2px 2px 2px 0 #aaa;
-	color: #fff;
-	font-size: 14px;
-	line-height: 21px;
-	padding: 3px 8px;
-}
-
-.search-form-section .remove_search:hover {
-	-webkit-box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
-	-moz-box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
-	box-shadow: 0 4px 4px 0 #b87979 inset, 0 -2px 3px 0 #535030 inset, 3px 3px 3px 0 #aaa;
-}
-
-.remove_search {
-	height: 29px;
-	margin: 8px 0 16px 0;
-	position: relative;
-	text-indent: 0px;
-	width: 102px;
-}
-
-.remove_search:after {
- 	content: "";
-}
-
-
 /* === Main Menu CSS ===
 --------------------------------------------------------- */
 .nav-menu {
@@ -530,11 +324,11 @@ th, td {
 }
 
 .nav-menu a:link, .nav-menu a:visited {
- 	color: var(--link-color);
+ 	color: var(--nav-link-color);
 }
 
 .nav-menu a:hover, .nav-menu a:focus {
- 	background-color: var(--link-hover-color);
+ 	background-color: var(--nav-background-hover-color);
 }
 
 .nav-item {
@@ -848,14 +642,6 @@ th, td {
 	width: 64%;
 }
 
-a.metadata-search-link {
-	color: #0073AA;
-}
-
-a.metadata-rights-link {
-	color: #666;
-}
-
 /* === Items Show - Left Column ===
 --------------------------------------------------------- */
 /* Tags */
@@ -1115,33 +901,6 @@ footer {
     	max-width: 844px;
     }
 
-    /* search box in banner */
-    #simple-search-container {
-		margin-bottom: 0;
-		margin-right: 0;
-		position: relative;
-		width: 98%;
-    }
-
-    #simple-search-container input[type="text"] {
-     	width: 100%;
-    }
-
-    #simple-search-container button, #simple-search-container .button {
-		position: absolute;
-		right: 0px;
-    }
-
-    #simple-search-container a {
-     	line-height: 30px;
-    }
-
-    .modify-search-button,
-    .small.blue.button.modify-search-button {
-		clear: both;
-		float: left;
-    }
-
     .two.columns {
 		width: 129px;
     }
@@ -1220,21 +979,6 @@ footer {
 		padding: 10px 13px;
 	}
 
-	/* Hide alphabet search list index on phones */
-	.search-index-view-index {
-		display: none;
-	}
-
-	/* Advanced Search form */
-	.search-form-section.four.columns {
-		margin-left: 0;
-		width: 92%;
-	}
-
-	#search-filter-form .eight.columns {
-		width: 92%;
-	}
-
 	#top-nav {
 		display: none;
 		margin-top: 0;
@@ -1304,19 +1048,5 @@ footer {
 		.offset-by-three.column,
 		.offset-by-three.columns {
 		margin-left: 4%;
-	}
-
-	/* Advanced Search form */
-	.search-filter-form .seven.columns {
-		width: 95%;
-	}
-
-	.search-filter-form .two.columns,
-	.search-filter-form .five.columns {
-		width: 100%;
-	}
-
-	.search-filter-form input[type=text] {
-		width: 100%;
 	}
 }
