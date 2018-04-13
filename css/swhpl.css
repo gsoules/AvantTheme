@@ -1,0 +1,17 @@
+:root {
+    --background-color: #482102;
+    --link-color: #c76941;
+    --link-hover-color: #e57f52;
+    --nav-link-color: #eee;
+    --nav-link-hover-color: #fff;
+    --nav-background-hover-color: #843418;
+}
+
+a.metadata-rights-link:link,
+a.metadata-rights-link:visited {
+    color: #666;
+}
+
+a.metadata-rights-link:hover {
+    color: #aaa;
+}

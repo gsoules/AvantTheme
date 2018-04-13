@@ -2,4 +2,16 @@
     --background-color: #ebf3ff;
     --link-color: #3d5a98;
     --link-hover-color: #7596b9;
+    --preview-link-color: #666;
+    --preview-link-hover-color: #aaa;
 }
+
+a.metadata-rights-link:link,
+a.metadata-rights-link:visited {
+    color: #666;
+}
+
+a.metadata-rights-link:hover {
+    color: #aaa;
+}
+
