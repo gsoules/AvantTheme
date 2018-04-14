@@ -2,6 +2,8 @@
     --background-color: #ebf3ff;
     --link-color: #3d5a98;
     --link-hover-color: #7596b9;
+    --link-color: #c76941;
+    --link-hover-color: #e57f52;
     --preview-link-color: #666;
     --preview-link-hover-color: #aaa;
 }
@@ -15,3 +17,75 @@ a.metadata-rights-link:hover {
     color: #aaa;
 }
 
+
+/* Color values for reference
+	#C41130; - garnet red
+	#729108; - green
+	#005596; - blue
+	#f29400; - orange
+	#A0218C; - wine (purple)
+	#508dba; - lighter blue
+	#989FA9; - gray
+*/
+
+.items.show #content h1.article {
+    border-color: #c41130;
+}
+
+.items.show #content h1.document {
+    border-color: #729108;
+}
+
+.items.show #content h1.image {
+    border-color: #005596;
+}
+
+.items.show #content h1.map {
+    border-color: #f29400;
+}
+
+.items.show #content h1.publication {
+    border-color: #A0218C;
+}
+
+.items.show #content h1.gallery {
+    border-color: #508dba;
+}
+
+/* Color bar that appears above item image thumbnail */
+.item-preview .item-img.article {
+    border-top: 4px solid #c41130; /* red */
+}
+
+.item-preview .item-img.document {
+    border-top: 4px solid #729108; /* green */
+}
+
+.item-preview .item-img.image {
+    border-top: 4px solid #005596; /* blue */
+}
+
+.item-preview .item-img.map {
+    border-top: 4px solid #f29400; /* orange */
+}
+
+.item-preview .item-img.publication {
+    border-top: 4px solid #A0218C; /* Wine (purple) */
+}
+
+.item-preview .item-img.gallery {
+    border-top: 4px solid #FBD400; /* Dark yellow */
+}
+
+/* don't display color bar and don't restrict height and width of cover image */
+.item-preview.cover-image .item-img {
+    border-top: none;
+    max-height: none;
+    width: auto;
+}
+
+.item-preview.cover-image .item-img img {
+    max-height: none;
+    padding: 0;
+    width: auto;
+}
