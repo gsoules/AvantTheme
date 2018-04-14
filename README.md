@@ -2,7 +2,7 @@
 
 AvantTheme provides:
 
-* Controls for simple search, subject search, and advanced search using the [AvantSearch](https://github.com/gsoules/AvantSearch) plugin
+* Controls for simple search and advanced search using the [AvantSearch](https://github.com/gsoules/AvantSearch) plugin
 * Support for [Galleries](http://swhplibrary.net/archive/gallery/) using the [AvantRelationships](https://github.com/gsoules/AvantRelationships) plugin
 * Support for the lightbox feature using the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin
 * Support for zoomable images using the [AvantZoom](https://github.com/gsoules/AvantCustom) plugin
