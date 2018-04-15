@@ -68,18 +68,12 @@ if (!$dependentPluginsActive)
     <div id="wrap">
 
         <header id="header" role="banner">
-            <div id="simple-search-container" role="search">
-                <?php
-                if (plugin_is_active('AvantSearch'))
-                {
-                    echo AvantSearchPlugin::emitSearchForm();
-                }
-                else
-                {
-                    $advancedOption = get_theme_option('use_advanced_search');
-                    echo search_form(array('show_advanced' => $advancedOption === null || $advancedOption == true));
-                }
-                ?>
+            <div id="search-container" role="search">
+                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                    <?php echo search_form(array('show_advanced' => true)); ?>
+                <?php else: ?>
+                    <?Php echo search_form(); ?>
+                <?php endif; ?>
             </div>
 
             <div id="masthead">
