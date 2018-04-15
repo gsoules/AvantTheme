@@ -106,28 +106,13 @@ input
 	margin: 0px;
 }
 
-button {
-	background: rgba(0,0,0,0) linear-gradient(to bottom, #7ea115, #608002) repeat scroll 0 0;
-	border: 1px solid #7ea115;
-	-webkit-box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
-	-moz-box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
-	box-shadow: 0 3px 3px 0 #a1b566 inset, 0 -2px 2px 0 #52690c inset, 2px 2px 2px 0 #aaa;
-	color: #fff;
-	padding: 3px 8px;
-}
-
-button:hover {
-	-webkit-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
-	-moz-box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
-	box-shadow: 0 4px 4px 0 #a1b566 inset, 0 -2px 3px 0 #52690c inset, 3px 3px 3px 0 #aaa;
-}
-
 input[type=submit],
 button,
 a.button {
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	background-color: #A49D4C;
+	background-color: #29536b;
+	border: 1px solid #29536b;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
@@ -143,29 +128,14 @@ a.button {
 input[type=submit]:hover,
 button:hover,
 a.button:hover {
-	background-color: #706b34;
+	background-color: #5f5f5f;
+	border: 1px colid #5f5f5f;
 }
 
-/* Input buttons (submit) */
+/* Input button - submit only */
 input[type=submit] {
-	background: rgba(0,0,0,0) linear-gradient(to bottom, #376c8b, #29536b) repeat scroll 0 0;
-	border: 1px solid #29536b;
-	-webkit-box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
-	-moz-box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
-	box-shadow: 0 3px 3px 0 #6194b1 inset, 0 -2px 2px 0 #17313f inset, 2px 2px 2px 0 #aaa;
-	color: #fff;
-	font-family: "Lato", sans-serif;
-	font-size: 14px;
 	margin-top: 6px;
-	min-width: 124px;
-	padding: 3px 8px;
 	width: 150px;
-}
-
-input[type=submit]:hover {
-	-webkit-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
-	-moz-box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
-	box-shadow: 0 4px 4px 0 #6194b1 inset, 0 -2px 3px 0 #17313f inset, 3px 3px 3px 0 #aaa;
 }
 
 input[type=text] {
@@ -215,6 +185,121 @@ th, td {
 	padding: 10px 0;
 	border-bottom: 1px solid #ddd;
 }
+
+
+.search-results-title {
+	display: inline-block;
+	float: left;
+	margin-bottom: .5em;
+	margin-top:.5em;
+	padding: 0;
+	color: #1a77bd;
+	font-size:26px;
+	font-weight: 400;
+	line-height: 1.2em;
+}
+
+.search-results-layout-options-button {
+	background-color: #52690c;
+	border-color: #52690c;
+}
+
+.search-results-layout-options li a {
+	background-color: #52690c;
+}
+
+.search-results-layout-options li a.layout-normal:hover {
+	background-color: #ccc;
+}
+
+/* Add field button */
+.add_search {
+	background-color: #52690c;
+	border: 1px solid #52690c;
+}
+
+/* Remove field button */
+.remove_search {
+	background-color: #7e432c;
+	border: 1px solid #7e432c;
+}
+
+.add_search:hover. .remove_search:hover {
+	background-color: #5f5f5f;
+	border: 1px solid #5f5f5f;
+}
+
+/* === Search Box in banner ===
+--------------------------------------------------------- */
+#search-container {
+	margin-right: 12px;
+	padding: 16px 10px 0px 6px;
+	position: absolute;
+	right:0;
+	text-align: right;
+	width: 30%;
+	z-index: 250;
+}
+
+#search-container a {
+	font-size: 16px;
+}
+
+#search-container a:link,
+#search-container a:visited {
+	text-decoration: none;
+}
+
+#search-container button {
+	border: none;
+	box-shadow: none;
+	padding: 0.25em;
+	position: relative;
+	text-indent: -9999px; /* move default text out of the way */
+	width: 32px;
+}
+
+#search-container button::after {
+	background-color: #29536b;
+	bottom: 0;
+	content: "\f002";
+	font-family: "FontAwesome";
+	left: 0;
+	line-height: 28px;
+	position: absolute;
+	text-indent: 0;
+	top: 0;
+	width: 32px;
+}
+
+#search-container button:hover::after {
+	background-color: #5f5f5f;
+}
+
+#search-container form {
+	margin: 0.375em 0;
+}
+
+#search-container input {
+	vertical-align: top;
+	margin: 0;
+}
+
+#search-container input[type=text] {
+	float: left;
+	width: 240px;
+}
+
+
+/* Default colors for Advanced Search link in banner */
+#search-container a {
+	color: var(--nav-link-color);	font-size: 16px;
+}
+
+#search-container a:hover {
+	color: var(--nav-link-hover-color);
+}
+
 
 /* ----- Layout classes ----- */
 
@@ -728,34 +813,56 @@ footer {
 		border-left: 0;
 	}
 
-    body, #wrap {
+	body, #wrap {
 		margin: 0;
 		width: 100%;
-    }
+	}
 
-    #content > h1:first-of-type {
+	#content > h1:first-of-type {
 		line-height:24px;
 		margin-top:8px;
 		width:100%;
-    }
+	}
 
-    .five.columns {
-    	width: 70%;
-    }
+	.five.columns {
+	width: 70%;
+	}
 
-    /* Handle indent of multiple Title or Subject lines on items/show page */
-    .offset-by-three.column,
-    .offset-by-three.columns {
-    	margin-left: 24.5%;
-    }
+	/* Handle indent of multiple Title or Subject lines on items/show page */
+	.offset-by-three.column,
+	.offset-by-three.columns {
+	margin-left: 24.5%;
+	}
 
-    #primary {
-    	max-width: 844px;
-    }
+	#primary {
+	max-width: 844px;
+	}
 
-    .two.columns {
+	.two.columns {
 		width: 129px;
-    }
+	}
+		
+	/* search box in banner */
+	#search-container {
+		margin-bottom: 0;
+		margin-right: 0;
+		position: relative;
+		width: 98%;
+	}
+
+	#search-container input[type="text"] {
+		width: 100%;
+	}
+
+	#search-container button, #search-container .button {
+		position: absolute;
+		right: 0px;
+	}
+
+	#search-container a {
+		line-height: 30px;
+	}
+
 }
 
 /* === CSS for Width < 600px (Mobile Landscape) ===

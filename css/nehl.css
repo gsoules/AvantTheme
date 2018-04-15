@@ -89,3 +89,7 @@ a.metadata-rights-link:hover {
     padding: 0;
     width: auto;
 }
+
+#search-index-view-headings {
+    column-count: 3;
+}
