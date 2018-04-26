@@ -1,7 +1,7 @@
 <?php
 if (plugin_is_active('AvantElements'))
 {
-    $elementDisplay = new ElementDisplayOrder();
+    $elementDisplay = new AvantElements();
     $elementSet = $elementDisplay->orderElementsForDisplay($elementsForDisplay);
 }
 else
