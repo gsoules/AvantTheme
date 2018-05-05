@@ -12,7 +12,7 @@ $title = ItemMetadata::getItemTitle($item);
 echo head(array('title' => $title, 'bodyclass' => 'items show'));
 
 $type = '';
-$itemType = ItemMetadata::getElementTextFromElementName($item, array('Dublin Core', 'Type'));
+$itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
 if ($itemType)
 {
     // Get just the first part of a hierarchical type value e.g. just "Document" from "Document, Letter".

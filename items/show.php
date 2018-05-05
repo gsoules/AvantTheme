@@ -8,7 +8,7 @@ if (!plugin_is_active('AvantCommon'))
     return;
 }
 
-$itemType = ItemMetadata::getElementTextFromElementName($item, array('Dublin Core', 'Type'));
+$itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
 
 if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
 {
