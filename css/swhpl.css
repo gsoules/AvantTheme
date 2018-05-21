@@ -4,7 +4,8 @@
     --link-hover-color: #e57f52;
     --nav-link-color: #eee;
     --nav-link-hover-color: #fff;
-    --nav-background-hover-color: #843418;
+    --nav-menu-hover-color: #843418;
+    --header-color: #1a77bd;
 }
 
 a.metadata-rights-link:link,

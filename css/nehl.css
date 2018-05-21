@@ -2,8 +2,10 @@
     --background-color: #ebf3ff;
     --link-color: #3d5a98;
     --link-hover-color: #7596b9;
-    --link-color: #c76941;
-    --link-hover-color: #e57f52;
+    --nav-link-color: #777;
+    --nav-link-hover-color: #999;
+    --nav-menu-hover-color: #7596b9;
+    --header-color: #1a77bd;
     --preview-link-color: #666;
     --preview-link-hover-color: #aaa;
 }

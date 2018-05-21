@@ -1,8 +1,16 @@
 :root {
-    --background-color: #F7EFE4;
+    --background-color: #F9F1E6;
     --link-color: #89181E;
     --link-hover-color: #E2BFBD;
+    --nav-link-color: #8C131C;
+    --nav-link-hover-color: #A07274;
+    --nav-menu-hover-color: #c1817d;
+    --header-color: #8C131C;
+    --preview-link-color: #666;
+    --preview-link-hover-color: #aaa;
 }
+
+
 
 .search-td-image .item-preview-header {
     padding-left: 4px;
