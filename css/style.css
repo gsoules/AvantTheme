@@ -190,19 +190,6 @@ th, td {
 	border-bottom: 1px solid #ddd;
 }
 
-
-.search-results-title {
-	display: inline-block;
-	float: left;
-	margin-bottom: .5em;
-	margin-top:.5em;
-	padding: 0;
-	color: #1a77bd;
-	font-size:26px;
-	font-weight: 400;
-	line-height: 1.2em;
-}
-
 .search-results-layout-options-button {
 	background-color: #52690c;
 	border-color: #52690c;
