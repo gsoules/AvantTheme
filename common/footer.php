@@ -22,6 +22,5 @@
     });
     </script>
 
-<?php echo $this->partial('avantcommon-script.php'); ?>
 </body>
 </html>
