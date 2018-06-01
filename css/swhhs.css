@@ -1,0 +1,28 @@
+:root {
+    --background-color: #ffffff;
+    --link-color: #31903e;
+    --link-hover-color: #6c926b;
+    --nav-link-color: #3f593e;
+    --nav-link-hover-color: #6c926b;
+    --nav-menu-hover-color: #d9e4dd;
+    --header-color: #3f593e;
+    --preview-link-color: #666;
+    --preview-link-hover-color: #aaa;
+}
+
+.search-td-image .item-preview-header {
+    padding-left: 4px;
+    width: 160px;
+}
+
+.search-results-detail-col2 {
+    display: none;
+}
+
+.search-results-detail-col3 {
+    width: 70%;
+}
+
+.search-results-title {
+    color: var(--header-color)
+}
