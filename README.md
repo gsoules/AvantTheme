@@ -7,6 +7,7 @@ AvantTheme provides:
 * Support for the lightbox feature using the [AvantCommon](https://github.com/gsoules/AvantCommon) plugin
 * Support for zoomable images using the [AvantZoom](https://github.com/gsoules/AvantCustom) plugin
 * Layout, styling, and graphics for public facing pages
+* Shows private elements to logged in users on public pages in gray italics (private elements don't appear if not logged in)
 * Custom 404 error page
 
 ## Dependencies
