@@ -15,13 +15,19 @@ else
         }
     }
 }
+
+$privateElementsData = CommonConfig::getOptionDataForPrivateElements();
 ?>
 
 <div class="element-set">
     <?php foreach ($elementSet as $elementName => $elementInfo): ?>
         <div id="<?php echo text_to_id(html_escape("{$elementInfo['element']['set_name']} $elementName")); ?>" class="element">
             <div class="field two columns alpha">
-                <label><?php echo html_escape(__($elementName)); ?></label>
+                <?php
+                // Style the element label to indicate whether the field is private.
+                $class = in_array($elementName, $privateElementsData) ? ' class="private-element"' : '';
+                echo "<label$class>" . html_escape(__($elementName)) . "</label>";
+                ?>
             </div>
             <?php foreach ($elementInfo['texts'] as $index => $text):
                 if ($index == 0): ?>
