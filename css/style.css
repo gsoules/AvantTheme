@@ -893,7 +893,7 @@ footer {
 	}
 
 	#nav-toggle span {
-		color: var(--link-color);
+		color: var(--nav-link-hover-color);
 	}
 
 	#nav-toggle span:before {
