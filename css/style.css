@@ -195,6 +195,10 @@ th, td {
 	border-color: #52690c;
 }
 
+.search-results-layout-options-button:hover {
+	background-color: #5f780c;
+}
+
 .search-results-layout-options li a {
 	background-color: #52690c;
 }
