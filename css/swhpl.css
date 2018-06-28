@@ -6,6 +6,8 @@
     --nav-link-hover-color: #fff;
     --nav-menu-hover-color: #843418;
     --header-color: #1a77bd;
+    --metadata-implicit-link-color: #c76941;
+    --metadata-implicit-link-hover-color: #e57f52;
 }
 
 a.metadata-rights-link:link,
