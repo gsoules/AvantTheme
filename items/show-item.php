@@ -34,7 +34,7 @@ if ($zoomingEnabled)
     if (count($itemFiles) > 0)
     {
         echo '<div id="item-files" class="element">';
-        $imageHtml = ItemPreview::getFileHtml($itemFiles[0], false);
+        $imageHtml = ItemPreview::getFileHtml($item, $itemFiles[0], false);
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
     }
@@ -80,7 +80,7 @@ if ($zoomingEnabled)
         $imageHtml = '';
         foreach ($itemFiles as $itemFile)
         {
-            $imageHtml .= ItemPreview::getFileHtml($itemFile, true);
+            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, true);
         }
         ?>
 
