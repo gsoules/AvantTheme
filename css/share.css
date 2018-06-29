@@ -1,0 +1,48 @@
+:root {
+    --background-color: #b2b9c1;
+    --link-color: #747c84;
+    --link-hover-color: #adb5bd;
+    --nav-link-color: #eee;
+    --nav-link-hover-color: #fff;
+    --nav-menu-hover-color: #843418;
+    --header-color: #1a77bd;
+    --metadata-implicit-link-color: #498dff;
+    --metadata-implicit-link-hover-color: #75a0ff;
+}
+
+a.metadata-rights-link:link,
+a.metadata-rights-link:visited {
+    color: #777;
+}
+
+#item-type-metadata-url.element div.field.two.columns.alpha {
+    color: white;
+}
+
+#item-type-metadata-url.element div.element-text.five.columns.omega p a.metadata-external-link {
+    color: #07900c;
+    font-weight: bold;
+}
+
+#dublin-core-contributor.element div.element-text.five.columns.omega p {
+    color: #07900c;
+}
+
+a.metadata-rights-link:hover {
+    color: #aaa;
+}
+
+footer {
+    padding: 0 0 6px 2px;
+}
+
+#footer-text {
+    padding: 10px 10px 3px;
+    font-size: 14px;
+}
+
+#footer-text,
+#footer a:link,
+#footer a:visited {
+    color: white;
+}
