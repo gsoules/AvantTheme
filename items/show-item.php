@@ -31,10 +31,14 @@ if ($zoomingEnabled)
 <div id="primary">
     <?php
     $itemFiles = $item->Files;
-    if (count($itemFiles) > 0)
+    $file = count($itemFiles) > 0 ? $itemFiles[0] : null;
+
+    // Get the HTML for the image that appears at the top of the Show page above the fields.
+    $imageHtml = ItemPreview::getFileHtml($item, $file, false);
+
+    if (strlen($imageHtml) > 0)
     {
         echo '<div id="item-files" class="element">';
-        $imageHtml = ItemPreview::getFileHtml($item, $itemFiles[0], false);
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
     }
@@ -69,18 +73,19 @@ if ($zoomingEnabled)
             </div>
     <?php } ?>
 
-    <!-- The following returns all of the files associated with an item. -->
     <div id="itemfiles" class="element">
         <?php
+        // Display thumbnails for additional files (when there is more than one) that are attached to this item.
         $itemFiles = get_current_record('item')->Files;
         if ($itemFiles) {
-            // Show all but the first file in the secondary area.
+            // Remove the first file because it appears in the Primary section above the fields.
             unset($itemFiles[0]);
         }
         $imageHtml = '';
         foreach ($itemFiles as $itemFile)
         {
-            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, true);
+            $showThumbnail = true;
+            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail);
         }
         ?>
 
@@ -92,7 +97,6 @@ if ($zoomingEnabled)
     <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
     <?php echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 
-    <!-- The following prints a list of all tags associated with the item -->
     <?php if (metadata($item, 'has tags')): ?>
         <div id="item-tags" class="element">
             <h2>Tags</h2>
@@ -100,7 +104,6 @@ if ($zoomingEnabled)
         </div>
     <?php endif; ?>
 
-    <!-- The following prints a citation for this item. -->
     <div id="item-citation" class="element">
         <h2>Citation</h2>
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
