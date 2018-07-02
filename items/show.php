@@ -9,34 +9,29 @@ if (!plugin_is_active('AvantCommon'))
 }
 
 $requestParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+
 if (isset($requestParams['share']))
 {
-    $itemFiles = $item->Files;
+    // The request is to return the item's sharable assets, namely its thumbnail and image URLs.
+    // If the item has no image, just the site name gets returned.
 
-    $info = array();
-    $info['contributor'] = get_option('site_title');
-
-    if (count($itemFiles) > 0)
-    {
-        $file = $itemFiles[0];
-        $info['thumbnail'] = $file->getWebPath('thumbnail');
-        $info['image'] = $file->getWebPath('original');
-    }
-
-    echo json_encode($info);
-    return;
-}
-
-$itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
-
-if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
-{
-    echo $this->partial('/items/show-gallery.php', array('item' => $item));
+    echo AvantCommon::emitSharedItemAssets($item);
 }
 else
 {
-    echo $this->partial('/items/show-item.php', array('item' => $item));
-}
+    // Emit the Show page for this item.
 
-echo foot();
+    $itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
+
+    if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
+    {
+        echo $this->partial('/items/show-gallery.php', array('item' => $item));
+    }
+    else
+    {
+        echo $this->partial('/items/show-item.php', array('item' => $item));
+    }
+
+    echo foot();
+}
 ?>
