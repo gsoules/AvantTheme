@@ -15,15 +15,6 @@ a.metadata-rights-link:visited {
     color: #777;
 }
 
-#item-type-metadata-url.element div.field.two.columns.alpha {
-    color: white;
-}
-
-#item-type-metadata-url.element div.element-text.five.columns.omega p a.metadata-external-link {
-    color: #07900c;
-    font-weight: bold;
-}
-
 #dublin-core-contributor.element div.element-text.five.columns.omega p {
     color: #07900c;
 }

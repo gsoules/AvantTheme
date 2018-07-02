@@ -50,6 +50,14 @@ if ($zoomingEnabled)
         echo '</div>';
     }
 
+    $sharedItemInfo = ItemPreview::getSharedItemInfo($item);
+    if (isset($sharedItemInfo['item-url']))
+    {
+        $contributor = $sharedItemInfo['contributor'];
+        $itemUrl = $sharedItemInfo['item-url'];
+        echo "<div><a href='$itemUrl'>$contributor</a></div>";
+    }
+
     echo all_element_texts($item);
 
     // If this item has a cover image, that image will appear in the sidebar, so pass it to
