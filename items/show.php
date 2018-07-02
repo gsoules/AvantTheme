@@ -8,6 +8,25 @@ if (!plugin_is_active('AvantCommon'))
     return;
 }
 
+$requestParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+if (isset($requestParams['share']))
+{
+    $itemFiles = $item->Files;
+
+    $info = array();
+    $info['contributor'] = get_option('site_title');
+
+    if (count($itemFiles) > 0)
+    {
+        $file = $itemFiles[0];
+        $info['thumbnail'] = $file->getWebPath('thumbnail');
+        $info['image'] = $file->getWebPath('original');
+    }
+
+    echo json_encode($info);
+    return;
+}
+
 $itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
 
 if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))

@@ -50,12 +50,19 @@ if ($zoomingEnabled)
         echo '</div>';
     }
 
-    $sharedItemInfo = ItemPreview::getSharedItemInfo($item);
-    if (isset($sharedItemInfo['item-url']))
+    $sharedItemInfo = ItemMetadata::getSharedItemInfo($item);
+    if (isset($sharedItemInfo['contributor']))
     {
-        $contributor = $sharedItemInfo['contributor'];
+        $contributor = __('Shared by ') . $sharedItemInfo['contributor'];
         $itemUrl = $sharedItemInfo['item-url'];
-        echo "<div><a href='$itemUrl'>$contributor</a></div>";
+        $message = __('View Full Item');
+        echo "<div class='shared-item-contributor'>$contributor<div><a class='shared-item-link' href='$itemUrl'>$message</a></div></div>";
+    }
+    else if (isset($sharedItemInfo['error']))
+    {
+        $itemUrl = $sharedItemInfo['item-url'];
+        $message = __('The image for this shared item is not accessible at this time.');
+        echo "<div class='shared-item-error'>$message</div><hr/>";
     }
 
     echo all_element_texts($item);
