@@ -1,26 +1,4 @@
 <?php
-function emitSharedItemImageLink($item)
-{
-    $html = '';
-    $sharedItemInfo = ItemMetadata::getSharedItemAssets($item);
-
-    if (isset($sharedItemInfo['contributor']))
-    {
-        $contributor = __('Shared by ') . $sharedItemInfo['contributor'];
-        $itemUrl = $sharedItemInfo['item-url'];
-        $message = __('View Full Item');
-        $html = "<div class='shared-item-contributor'>$contributor<div><a class='shared-item-link' href='$itemUrl'>$message</a></div></div>";
-    }
-    else if (isset($sharedItemInfo['error']))
-    {
-        $itemUrl = $sharedItemInfo['item-url'];
-        $message = __('The image for this shared item is not accessible at this time.');
-        $html = "<div class='shared-item-error'>$message</div><hr/>";
-    }
-
-    return $html;
-}
-
 $viewerScript = plugin_is_active('AvantZoom') ? ImageZoom::generateOpenSeadragonViewer($item) : '';
 $zoomingEnabled = !empty($viewerScript);
 
@@ -63,11 +41,6 @@ if ($zoomingEnabled)
         echo '<div id="item-files" class="element">';
         echo "<div class='element-text'>$imageHtml</div>";
         echo '</div>';
-    }
-    else
-    {
-        // Emit this item's shared image if it has one.
-        echo emitSharedItemImageLink($item);
     }
 
     if ($zoomingEnabled)
