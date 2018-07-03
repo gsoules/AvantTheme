@@ -15,7 +15,10 @@ if (isset($requestParams['share']))
     // The request is to return the item's sharable assets, namely its thumbnail and image URLs.
     // If the item has no image, just the site name gets returned.
 
-    echo AvantCommon::emitSharedItemAssets($item);
+    $json = ItemMetadata::emitSharedItemAssets($item);
+    $response = Zend_Controller_Front::getInstance()->getResponse();
+    $response->setHeader('Content-Type', 'application/json', true);
+    echo $json;
 }
 else
 {
