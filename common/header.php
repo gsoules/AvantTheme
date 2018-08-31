@@ -63,7 +63,7 @@ if (!$dependentPluginsActive)
 }
 ?>
 
-<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+<?php echo body_tag(array('class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
 
