@@ -30,6 +30,7 @@ a.metadata-rights-link:hover {
 	#989FA9; - gray
 */
 
+/*
 .items.show #content h1.article {
     border-color: #c41130;
 }
@@ -54,30 +55,31 @@ a.metadata-rights-link:hover {
     border-color: #508dba;
 }
 
-/* Color bar that appears above item image thumbnail */
+!* Color bar that appears above item image thumbnail *!
 .item-preview .item-img.article {
-    border-top: 4px solid #c41130; /* red */
+    border-top: 4px solid #c41130; !* red *!
 }
 
 .item-preview .item-img.document {
-    border-top: 4px solid #729108; /* green */
+    border-top: 4px solid #729108; !* green *!
 }
 
 .item-preview .item-img.image {
-    border-top: 4px solid #005596; /* blue */
+    border-top: 4px solid #005596; !* blue *!
 }
 
 .item-preview .item-img.map {
-    border-top: 4px solid #f29400; /* orange */
+    border-top: 4px solid #f29400; !* orange *!
 }
 
 .item-preview .item-img.publication {
-    border-top: 4px solid #A0218C; /* Wine (purple) */
+    border-top: 4px solid #A0218C; !* Wine (purple) *!
 }
 
 .item-preview .item-img.gallery {
-    border-top: 4px solid #FBD400; /* Dark yellow */
+    border-top: 4px solid #FBD400; !* Dark yellow *!
 }
+*/
 
 /* don't display color bar and don't restrict height and width of cover image */
 .item-preview.cover-image .item-img {
