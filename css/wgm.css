@@ -1,9 +1,10 @@
 :root {
-    --background-color: #2e4478;
+    --background-color: #e5c886;
     --link-color: #3d5a98;
     --link-hover-color: #7596b9;
-    --nav-link-color: #ddd;
-    --nav-menu-hover-color: #dddddd;
+    --nav-link-color: #750e11;
+    --nav-link-hover-color: #fff;
+    --nav-menu-hover-color: #f6e5b9;
     --header-color: #1a77bd;
     --preview-link-color: #666;
     --preview-link-hover-color: #aaa;
@@ -31,17 +32,4 @@ footer {
 #footer a:link,
 #footer a:visited {
     color: white;
-}
-
-li.nav-item {
-    border-right: 1px solid #ffffff;
-    box-shadow: 1px 0 0 #ffffff;
-}
-
-li.nav-item a:hover {
-    color: #2e4478;
-}
-
-#search-container button::after {
-    background-color: #888;
 }
