@@ -2,6 +2,18 @@
 $viewerScript = plugin_is_active('AvantZoom') ? ImageZoom::generateOpenSeadragonViewer($item) : '';
 $zoomingEnabled = !empty($viewerScript);
 
+// Specify whether the Show page displays the cover image for a reference item. When enabled, and when the item has a
+// cover image, the image displays at the top of the left-side panel along with the image's item number and that item's
+// title, both of which can be clicked to go to the cover image's item. To prevent that same image from appearing twice
+// on the page, the cover image is excluded from the Images section. While this seemed like a good feature, it has
+// caused confusion among users who are interested in the cover image itself as opposed to the reference item. When
+// referring to the image, they often use the reference item number and when referring to the reference item, use the
+// cover image's item number. It's also confusing that the cover image does not appear in the Images section where
+// people are used to clicking to see an item's images, whereas they don't tend to click the cover image or its links.
+// For now, this feature is getting disabled to see if it's better to not display the cover image at upper left on the
+// Show page and instead just display it as a thumbnail in the Images section.
+$coverImageEnabledOnShowPage = false;
+
 if ($zoomingEnabled)
 {
     // This must be emitted before the call to the head() function below.
@@ -55,7 +67,7 @@ if ($zoomingEnabled)
 
     // If this item has a cover image, that image will appear in the sidebar, so pass it to
     // admin_items_show to indicate that the image should be excluded from the list of related items.
-    $excludeItem = ItemPreview::getCoverImageItem($item);
+    $excludeItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
     echo get_specific_plugin_hook_output('AvantCustom', 'admin_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem));
     echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem));
     ?>
@@ -63,7 +75,7 @@ if ($zoomingEnabled)
 
 <div id="secondary">
     <?php
-        $coverImageItem = ItemPreview::getCoverImageItem($item);
+        $coverImageItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
         if (!empty($coverImageItem)) {
             ?>
             <div class="item-preview cover-image">
