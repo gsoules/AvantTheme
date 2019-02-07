@@ -90,10 +90,44 @@ if ($zoomingEnabled)
         <?php
         // Display thumbnails for additional files (when there is more than one) that are attached to this item.
         $itemFiles = get_current_record('item')->Files;
-        if ($itemFiles) {
+        if ($itemFiles)
+        {
             // Remove the first file because it appears in the Primary section above the fields.
             unset($itemFiles[0]);
         }
+
+        if ($itemFiles)
+        {
+            $imageCount = 0;
+            $documentCount = 0;
+            foreach ($itemFiles as $itemFile)
+            {
+                $isImage = substr($itemFile->mime_type, 0, 6) == 'image/';
+                if ($isImage)
+                {
+                    $imageCount++;
+                }
+                else
+                {
+                    $documentCount++;
+                }
+            }
+
+            $sectionContents = 'Images';
+            if ($imageCount == 0)
+            {
+                $sectionContents = 'Documents';
+            }
+            else
+            {
+               if ($documentCount > 0)
+               {
+                   $sectionContents = 'Images and Documents';
+               }
+            }
+            echo "<h2>Other $sectionContents</h2>";
+        }
+
         $imageHtml = '';
         foreach ($itemFiles as $itemFile)
         {
