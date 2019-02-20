@@ -19,6 +19,21 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     ?>
     <title><?php echo implode(' &middot; ', $titleParts); ?></title>
 
+    <?php
+    $globalSiteTag = get_theme_option('Global Site Tag');
+    if (!empty($globalSiteTag))
+    {
+        // Emit Google Analytics tracking code for public users, but not for logged in users.
+        // This way admin operations such as data entry won't throw off usage statistics.
+        $user = current_user();
+        $isLoggedIn = !empty($user);
+        if (!$isLoggedIn)
+        {
+            echo $globalSiteTag;
+        }
+    }
+    ?>
+
     <?php echo auto_discovery_link_tags(); ?>
     <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 

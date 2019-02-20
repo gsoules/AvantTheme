@@ -37,6 +37,12 @@ CSS File Name option that lets you specify the name of a CSS file that overrides
 * **CSS File Name** - By creating your own CSS file and placing it in the theme folder's CSS folder, you can easily make CSS
  changes without having to edit style.css. This approach makes it very easy to see and maintain changes that you have made.
 
+* **Global Site Tag** - Use this option to enable Google Analytics site tracking. Paste in the Global Site Tag (gtag.js)
+Javascript code that Google Analytics provides on its Admin > Tracking Info > Tracking Code page. The code must contain the
+Tracking ID for your Omeka website. Note that AvantTheme will emit this code only for public pages for users who are not
+logged in. It will not emit the code for admin pages or for logged in users. This way admin operations such as data entry
+won't throw off usage statistics. 
+
 ##  License
 
 This theme is published under [GNU/GPL].
