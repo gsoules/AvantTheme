@@ -12,7 +12,7 @@ $zoomingEnabled = !empty($viewerScript);
 // people are used to clicking to see an item's images, whereas they don't tend to click the cover image or its links.
 // For now, this feature is getting disabled to see if it's better to not display the cover image at upper left on the
 // Show page and instead just display it as a thumbnail in the Images section.
-$coverImageEnabledOnShowPage = false;
+$coverImageEnabledOnShowPage = true;
 
 if ($zoomingEnabled)
 {
