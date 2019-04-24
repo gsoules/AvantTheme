@@ -236,10 +236,6 @@ th, td {
 	z-index: 250;
 }
 
-#search-container a {
-	font-size: 16px;
-}
-
 #search-container a:link,
 #search-container a:visited {
 	text-decoration: none;
@@ -283,12 +279,33 @@ th, td {
 #search-container input[type=text] {
 	float: left;
 	width: 318px;
+	font-size: 14px;
+}
+
+#search-container input[type=checkbox] {
+	float: left;
+	margin-top: 3px;
+	margin-right: 4px;
+}
+
+#search-container a {
+	font-size: 14px;
+}
+
+#search-container div {
+	margin-top: 4px;
+}
+
+#search-container span {
+	float: left;
+	color: var(--nav-link-color);
+	font-size: 14px;
 }
 
 
 /* Default colors for Advanced Search link in banner */
 #search-container a {
-	color: var(--nav-link-color);	font-size: 16px;
+	color: var(--nav-link-color);
 }
 
 #search-container a:hover {
