@@ -190,23 +190,6 @@ th, td {
 	border-bottom: 1px solid #ddd;
 }
 
-.search-results-layout-options-button {
-	background-color: #52690c;
-	border-color: #52690c;
-}
-
-.search-results-layout-options-button:hover {
-	background-color: #5f780c;
-}
-
-.search-results-layout-options li a {
-	background-color: #52690c;
-}
-
-.search-results-layout-options li a.layout-normal:hover {
-	background-color: #ccc;
-}
-
 /* Add field button */
 .add_search {
 	background-color: #52690c;
