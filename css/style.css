@@ -221,7 +221,8 @@ th, td {
 
 #search-container a:link,
 #search-container a:visited {
-	text-decoration: none;
+	text-decoration: underline;
+	float: right;
 }
 
 #search-container button {
@@ -251,7 +252,7 @@ th, td {
 }
 
 #search-container form {
-	margin: 0.375em 0;
+	float:right;
 }
 
 #search-container input {
@@ -843,25 +844,10 @@ footer {
 		
 	/* search box in banner */
 	#search-container {
-		margin-bottom: 0;
-		margin-right: 0;
 		position: relative;
+		text-align: left;
 		width: 98%;
 	}
-
-	#search-container input[type="text"] {
-		width: 100%;
-	}
-
-	#search-container button, #search-container .button {
-		position: absolute;
-		right: 0px;
-	}
-
-	#search-container a {
-		line-height: 30px;
-	}
-
 }
 
 /* === CSS for Width < 600px (Mobile Landscape) ===
@@ -998,6 +984,9 @@ footer {
 		padding: .5em .4em;
 	}
 
+	#search-container input[type="text"] {
+		width: 270px;
+	}
 	h1 {
 		line-height: 20px;
 		margin-bottom: .5em;
