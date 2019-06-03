@@ -38,9 +38,6 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 
     <?php
-    queue_css_url('//fonts.googleapis.com/css?family=Lato');
-    queue_css_url('//fonts.googleapis.com/css?family=Roboto+Condensed');
-    queue_css_url('//fonts.googleapis.com/css?family=Cabin');
     queue_css_file('iconfonts');
     queue_css_file('style');
 
