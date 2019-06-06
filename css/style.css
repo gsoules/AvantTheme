@@ -25,7 +25,6 @@ html {
 body {
 	color: #222;
 	background: #f6f6f6;
-	font-family: "Roboto Condensed",sans-serif;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
 	font-size: 14px;
@@ -124,7 +123,6 @@ a.button {
 	border-radius: 0;
 	color:#fff;
 	cursor: pointer;
-	font-family: "Lato", sans-serif;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 21px;
@@ -150,7 +148,6 @@ input[type=text], input[type=password] {
 	border-width: 0.07143em;
 	border-style: solid;
 	display: block;
-	font-family: "Lato", sans-serif;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	height: 28px;
@@ -711,10 +708,6 @@ div.item h2 {
 	color: #777;
 	padding-left: 12px;
 }
-
-/*#container-item-links a {*/
-/*	font-family: "Roboto Condensed",sans-serif;*/
-/*}*/
 
 .container-item-links-label .element-text a:link {
 	font-size: 20px;
