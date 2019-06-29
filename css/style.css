@@ -758,6 +758,32 @@ div.item h2 {
 	font-size: 12px;
 }
 
+.search-results-title {
+	grid-area: message;
+}
+
+#search-filter-bar {
+	grid-area: filter;
+}
+
+#elasticsearch-sidebar {
+	grid-area: facets;
+}
+
+#elasticsearch-results {
+	grid-area: results;
+}
+
+.search-results-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+			"message"
+			"filter"
+			"facets"
+			"results";
+}
+
 /* Add a box shadow around the entire page area. */
 /* Set content width the same as WP website width */
 /* Remove padding so banner and menu are flush with left and right */
@@ -794,6 +820,23 @@ div.item h2 {
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
 	}
+
+	.search-results-container {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas:
+				"message message"
+				"filter	 filter"
+				"facets	 results";
+	}
+
+	.search-result-detail {
+		grid-template-columns: 10% 1fr;
+		grid-gap: 12px;
+		grid-template-areas:
+			"thumbnail metadata"
+			"description description";
+	}
 }
 
 /* === CSS for Width > 960 px ===
@@ -807,8 +850,25 @@ div.item h2 {
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
 	}
+
+	.search-result-detail {
+		grid-template-columns: 15% 1fr 1fr;
+		grid-gap: 18px;
+		grid-template-areas:
+				"thumbnail metadata description";
+	}
 }
 
+/* === CSS for Width > 1200 px ===
+--------------------------------------------------------- */
+@media screen and (min-width: 1200px) {
+	.search-result-detail {
+		grid-template-columns: 10% 1fr 1fr 1fr;
+		grid-gap: 18px;
+		grid-template-areas:
+				"thumbnail metadata description description";
+	}
+}
 
 /* === CSS for Width less than 844px ===
 --------------------------------------------------------- */
