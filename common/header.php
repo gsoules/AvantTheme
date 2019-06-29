@@ -80,26 +80,21 @@ if (!$dependentPluginsActive)
     <div id="wrap">
 
         <header id="header" role="banner">
-            <div id="search-container" role="search">
-            </div>
-
-            <div id="masthead">
-				<div id="branding" role="banner">
-                    <?php echo link_to_home_page(theme_logo()); ?>
-                    <div style="clear:both;"></div>
-                </div>
-
-				<!-- Container for mobile menu toggle -->
-				<a id="nav-toggle">
-					<span></span>
-				</a>
-				<nav id="top-nav" role="navigation">
-					<?php echo public_nav_main(); ?>
-				</nav>
-            </div>
-
+            <?php echo link_to_home_page(theme_logo()); ?>
         </header>
 
-        <div style="clear:both;"></div>
+        <nav id="menu">
+            <a id="nav-toggle">
+                <span></span>
+            </a>
+            <nav id="top-nav" role="navigation">
+                <?php echo public_nav_main(); ?>
+            </nav>
+        </nav>
+
+        <div id="search-container">
+        </div>
+
+<!--        <div style="clear:both;"></div>-->
 
         <article id="content" role="main" tabindex="-1">
