@@ -95,6 +95,4 @@ if (!$dependentPluginsActive)
         <div id="search-container">
         </div>
 
-<!--        <div style="clear:both;"></div>-->
-
         <article id="content" role="main" tabindex="-1">

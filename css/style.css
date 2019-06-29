@@ -192,22 +192,25 @@ th, td {
 
 /* === Search Box in banner ===
 --------------------------------------------------------- */
+#search-form {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	padding: 8px 12px;
+}
+
+#query {
+	width: 100%;
+}
+
 #search-container {
 	grid-area: search;
-	background-color: pink;
-	/*margin-right: 12px;*/
-	/*padding: 16px 0 0 6px;*/
-	/*position: absolute;*/
-	/*right:0;*/
-	/*text-align: right;*/
-	/*width: 356px;*/
-	/*z-index: 250;*/
+	background-color: var(--background-color);
+	align-self: center;
 }
 
 #search-container a:link,
 #search-container a:visited {
 	text-decoration: underline;
-	float: right;
 }
 
 #search-container button {
@@ -236,19 +239,14 @@ th, td {
 	background-color: #5f5f5f;
 }
 
-#search-container form {
-	float:right;
-}
-
 #search-container input {
 	vertical-align: top;
 	margin: 0;
 }
 
 #search-container input[type=text] {
-	float: left;
-	width: 318px;
 	font-size: 14px;
+	margin: 0;
 }
 
 #search-container input[type=checkbox] {
@@ -270,7 +268,6 @@ th, td {
 	color: var(--nav-link-color);
 	font-size: 14px;
 }
-
 
 /* Default colors for Advanced Search link in banner */
 #search-container a {
@@ -353,6 +350,7 @@ th, td {
 #header {
 	grid-area: header;
 	background-color: var(--background-color);
+	align-self: center;
 }
 
 #header > a > img
@@ -364,7 +362,7 @@ th, td {
 --------------------------------------------------------- */
 #menu {
 	grid-area: menu;
-	background-color: green;
+	background-color: var(--background-color);
 }
 
 .nav-menu {
@@ -423,11 +421,8 @@ th, td {
 	grid-area: content;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
-	/*clear: both;*/
-	/*float: left;*/
+	background-color: #fff;
 	padding: 8px 12px 12px 12px;
-	/*position: relative;*/
-	/*width: 100%;*/
 }
 
 #content > h1:first-child {
@@ -768,13 +763,14 @@ div.item h2 {
 /* Remove padding so banner and menu are flush with left and right */
 #wrap {
 	display: grid;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr;
 	grid-template-areas:
-			"header	 header"
-			"menu	 search"
-			"content content"
-			"footer  footer";
-	background: #fff;
+			"header"
+			"menu"
+			"search"
+			"content"
+			"footer";
+	background: var(--background-color);
 	-moz-box-shadow: 0 4px 15px 5px #aaa;
 	-webkit-box-shadow: 0 4px 15px 5px #aaa;
 	box-shadow: 0 4px 15px 5px #aaa;
@@ -793,7 +789,7 @@ div.item h2 {
 	#wrap {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-			"header	 header  header	 search  search"
+			"header	 header  search	 search  search"
 			"menu	 menu  	 menu	 menu  	 menu"
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
@@ -804,12 +800,12 @@ div.item h2 {
 --------------------------------------------------------- */
 @media screen and (min-width: 960px) {
 	#wrap {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-			"header	 header  header  search"
-			"menu	 menu  	 menu	 menu"
-			"content content content content"
-			"footer  footer  footer  footer";
+			"header	 header  header	 search  search"
+			"menu	 menu  	 menu	 menu  	 menu"
+			"content content content content content"
+			"footer  footer  footer  footer  footer";
 	}
 }
 
@@ -861,13 +857,6 @@ div.item h2 {
 
 	.two.columns {
 		width: 129px;
-	}
-
-	/* search box in banner */
-	#search-container {
-		position: relative;
-		text-align: left;
-		width: 98%;
 	}
 }
 
@@ -1011,10 +1000,6 @@ This is the break when the menu collapes to a burger icon.
 @media screen and (max-width: 480px) {
 	#content {
 		padding: .5em .4em;
-	}
-
-	#search-container input[type="text"] {
-		width: 270px;
 	}
 
 	h1 {
