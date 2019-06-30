@@ -758,15 +758,19 @@ div.item h2 {
 	font-size: 12px;
 }
 
-.search-results-title {
+#search-results-title {
+	grid-area: title;
+}
+
+#search-filters-message {
 	grid-area: message;
 }
 
-#search-filter-bar {
+#search-selector-bar {
 	grid-area: filter;
 }
 
-#elasticsearch-sidebar {
+#search-facets {
 	grid-area: facets;
 }
 
@@ -774,14 +778,20 @@ div.item h2 {
 	grid-area: results;
 }
 
-.search-results-container {
+#search-pagination-bottom {
+	grid-area: bottom;
+}
+
+#search-results-container {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-areas:
+			"title"
 			"message"
 			"filter"
 			"facets"
-			"results";
+			"results"
+			"bottom";
 }
 
 /* Add a box shadow around the entire page area. */
@@ -805,7 +815,7 @@ div.item h2 {
 	margin-top: 12px;
 	overflow: hidden;
 	padding: 0;
-	max-width: 1200px;
+	max-width: 1600px;
 }
 
 #search-facet-sections {
@@ -820,8 +830,40 @@ div.item h2 {
 	display: block;
 }
 
-/* === CSS for Width > 600 px ===
---------------------------------------------------------- */
+#search-view-selector {
+	display: none;
+}
+
+#search-layout-selector {
+	display: none;
+}
+
+#search-sort-selector {
+	display: none;
+}
+
+.search-selector-button-value {
+	display: none;
+}
+
+@media screen and (min-width: 500px) {
+	/* Display the rest of the search selector dropdown. At narrow widths, they are hidden to save horizontal space. */
+	#search-sort-selector {
+		display: block;
+	}
+
+	#search-view-selector {
+		display: block;
+	}
+
+	#search-layout-selector {
+		display: block;
+	}
+
+	#search-filter-selector {
+		display: block;
+	}
+}
 
 @media screen and (min-width: 600px) {
 	#wrap {
@@ -833,13 +875,14 @@ div.item h2 {
 			"footer  footer  footer  footer  footer";
 	}
 
-	.search-results-container {
-		display: grid;
+	#search-results-container {
 		grid-template-columns: 180px 1fr;
 		grid-template-areas:
+				"title	 title"
 				"message message"
 				"filter	 filter"
-				"facets	 results";
+				"facets	 results"
+				".		 bottom";
 	}
 
 	.search-result-detail {
@@ -863,8 +906,13 @@ div.item h2 {
 	}
 }
 
-/* === CSS for Width > 960 px ===
---------------------------------------------------------- */
+@media screen and (min-width: 825px) {
+	/* Display the value of search selector dropdown. At narrower widths, values are hidden to save horizontal space. */
+	.search-selector-button-value {
+		display: inline-block;
+	}
+}
+
 @media screen and (min-width: 960px) {
 	#wrap {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -893,13 +941,8 @@ div.item h2 {
 				"thumbnail metadata description description";
 	}
 
-	.search-results-container {
-		display: grid;
+	#search-results-container {
 		grid-template-columns: 280px 1fr;
-		grid-template-areas:
-				"message message"
-				"filter	 filter"
-				"facets	 results";
 	}
 }
 

@@ -23,6 +23,6 @@
     width: 70%;
 }
 
-.search-results-title {
+#search-results-title {
     color: var(--header-color)
 }
