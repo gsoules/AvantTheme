@@ -830,10 +830,7 @@ div.item h2 {
 	display: block;
 }
 
-#search-view-selector {
-	display: none;
-}
-
+/* Don't show these selectors on the narrowest devices. */
 #search-layout-selector {
 	display: none;
 }
@@ -842,21 +839,18 @@ div.item h2 {
 	display: none;
 }
 
+/* Don't show the selector dropdown values on the narrowest devices. */
 .search-selector-button-value {
 	display: none;
 }
 
 @media screen and (min-width: 500px) {
-	/* Display the rest of the search selector dropdown. At narrow widths, they are hidden to save horizontal space. */
-	#search-sort-selector {
-		display: block;
-	}
-
-	#search-view-selector {
-		display: block;
-	}
-
+	/* Display search selectors that are hidden on the narrowest devices. */
 	#search-layout-selector {
+		display: block;
+	}
+
+	#search-sort-selector {
 		display: block;
 	}
 
@@ -907,7 +901,7 @@ div.item h2 {
 }
 
 @media screen and (min-width: 825px) {
-	/* Display the value of search selector dropdown. At narrower widths, values are hidden to save horizontal space. */
+	/* Display the value of search selector dropdowns. At narrower widths, values are hidden to save horizontal space. */
 	.search-selector-button-value {
 		display: inline-block;
 	}
