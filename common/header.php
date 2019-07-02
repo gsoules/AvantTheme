@@ -84,9 +84,6 @@ if (!$dependentPluginsActive)
         </header>
 
         <nav id="menu">
-            <a id="nav-toggle">
-                <span></span>
-            </a>
             <nav id="top-nav" role="navigation">
                 <?php echo public_nav_main(); ?>
             </nav>

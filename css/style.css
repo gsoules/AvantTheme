@@ -278,6 +278,10 @@ th, td {
 	color: var(--nav-link-hover-color);
 }
 
+#advanced-search-link {
+	float:right;
+}
+
 
 /* ----- Layout classes ----- */
 
@@ -802,8 +806,8 @@ div.item h2 {
 	grid-template-columns: 1fr;
 	grid-template-areas:
 			"header"
-			"menu"
 			"search"
+			"menu"
 			"content"
 			"footer";
 	background: var(--background-color);
@@ -879,14 +883,6 @@ div.item h2 {
 				".		 bottom";
 	}
 
-	.search-result-detail {
-		grid-template-columns: 25% 1fr;
-		grid-gap: 12px;
-		grid-template-areas:
-			"thumbnail metadata"
-			"description description";
-	}
-
 	#search-facet-sections {
 		display: block;
 	}
@@ -919,8 +915,9 @@ div.item h2 {
 
 	.search-result-detail {
 		grid-template-columns: 20% 1fr 1fr;
-		grid-gap: 18px;
+		grid-gap: 8px;
 		grid-template-areas:
+				"title 	   title	title"
 				"thumbnail metadata description";
 	}
 }
@@ -930,8 +927,8 @@ div.item h2 {
 @media screen and (min-width: 1200px) {
 	.search-result-detail {
 		grid-template-columns: 15% 1fr 1fr 1fr;
-		grid-gap: 18px;
 		grid-template-areas:
+				"title 	   title	title	    title"
 				"thumbnail metadata description description";
 	}
 
@@ -1013,26 +1010,20 @@ This is the break when the menu collapes to a burger icon.
 	}
 
 	#nav-toggle {
-		/*background-color: var(--background-color);*/
 		cursor: pointer;
-		display: block;
-		float: left;
-		height: 40px;
-		margin: 0 auto;
-		padding: 2px 4%;
-		width: 100%;
+		display: inline;
 	}
 
 	#nav-toggle span {
 		color: var(--nav-link-hover-color);
+		padding-left: 8px;
 	}
 
 	#nav-toggle span:before {
 		content: "\f0c9";
 		font-family: "FontAwesome";
-		font-size: 20px;
-		height: 40px;
-		line-height: 40px;
+		font-size: 32px;
+		line-height: 44px;
 	}
 
 	.navigation {
