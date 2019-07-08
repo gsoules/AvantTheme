@@ -367,6 +367,7 @@ th, td {
 #menu {
 	grid-area: menu;
 	background-color: var(--background-color);
+	border-top: 2px solid #fff;
 }
 
 .nav-menu {
@@ -782,20 +783,12 @@ div.item h2 {
 	grid-area: results;
 }
 
-#search-pagination-bottom {
-	grid-area: bottom;
+#search-table-view {
+	grid-area: results;
 }
 
-#search-results-container {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-areas:
-			"title"
-			"message"
-			"filter"
-			"facets"
-			"results"
-			"bottom";
+#search-pagination-bottom {
+	grid-area: bottom;
 }
 
 /* Add a box shadow around the entire page area. */
@@ -873,16 +866,6 @@ div.item h2 {
 			"footer  footer  footer  footer  footer";
 	}
 
-	#search-results-container {
-		grid-template-columns: 180px 1fr;
-		grid-template-areas:
-				"title	 title"
-				"message message"
-				"filter	 filter"
-				"facets	 results"
-				".		 bottom";
-	}
-
 	#search-facet-sections {
 		display: block;
 	}
@@ -912,30 +895,12 @@ div.item h2 {
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
 	}
-
-	.search-result-detail {
-		grid-template-columns: 20% 1fr 1fr;
-		grid-gap: 8px;
-		grid-template-areas:
-				"title 	   title	title"
-				"thumbnail metadata description";
-	}
 }
 
-/* === CSS for Width > 1200 px ===
---------------------------------------------------------- */
 @media screen and (min-width: 1200px) {
-	.search-result-detail {
-		grid-template-columns: 15% 1fr 1fr 1fr;
-		grid-template-areas:
-				"title 	   title	title	    title"
-				"thumbnail metadata description description";
-	}
-
-	#search-results-container {
-		grid-template-columns: 280px 1fr;
-	}
 }
+
+
 
 /* === CSS for Width less than 844px ===
 --------------------------------------------------------- */
