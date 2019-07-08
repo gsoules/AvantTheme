@@ -763,34 +763,6 @@ div.item h2 {
 	font-size: 12px;
 }
 
-#search-results-title {
-	grid-area: title;
-}
-
-#search-filters-message {
-	grid-area: message;
-}
-
-#search-selector-bar {
-	grid-area: filter;
-}
-
-#search-facets {
-	grid-area: facets;
-}
-
-#elasticsearch-results {
-	grid-area: results;
-}
-
-#search-table-view {
-	grid-area: results;
-}
-
-#search-pagination-bottom {
-	grid-area: bottom;
-}
-
 /* Add a box shadow around the entire page area. */
 /* Set content width the same as WP website width */
 /* Remove padding so banner and menu are flush with left and right */
@@ -815,47 +787,6 @@ div.item h2 {
 	max-width: 1600px;
 }
 
-#search-facet-sections {
-	display: none;
-}
-
-#search-facet-title {
-	display: none;
-}
-
-#search-facet-button {
-	display: block;
-}
-
-/* Don't show these selectors on the narrowest devices. */
-#search-layout-selector {
-	display: none;
-}
-
-#search-sort-selector {
-	display: none;
-}
-
-/* Don't show the selector dropdown values on the narrowest devices. */
-.search-selector-button-value {
-	display: none;
-}
-
-@media screen and (min-width: 500px) {
-	/* Display search selectors that are hidden on the narrowest devices. */
-	#search-layout-selector {
-		display: block;
-	}
-
-	#search-sort-selector {
-		display: block;
-	}
-
-	#search-filter-selector {
-		display: block;
-	}
-}
-
 @media screen and (min-width: 600px) {
 	#wrap {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -864,25 +795,6 @@ div.item h2 {
 			"menu	 menu  	 menu	 menu  	 menu"
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
-	}
-
-	#search-facet-sections {
-		display: block;
-	}
-
-	#search-facet-title {
-		display: block;
-	}
-
-	#search-facet-button {
-		display: none;
-	}
-}
-
-@media screen and (min-width: 825px) {
-	/* Display the value of search selector dropdowns. At narrower widths, values are hidden to save horizontal space. */
-	.search-selector-button-value {
-		display: inline-block;
 	}
 }
 
@@ -899,8 +811,6 @@ div.item h2 {
 
 @media screen and (min-width: 1200px) {
 }
-
-
 
 /* === CSS for Width less than 844px ===
 --------------------------------------------------------- */
@@ -964,11 +874,6 @@ This is the break when the menu collapes to a burger icon.
 	#admin-bar .navigation li a {
 		width: inherit;
 	}
-
-	/*!* Allow the banner image to scale down to fit the available space on small screens.*!*/
-	/*div#branding a img {*/
-	/*	width: 100%;*/
-	/*}*/
 
 	.five.columns {
 		width: 90%;
