@@ -399,7 +399,7 @@ th, td {
 .nav-item > a {
 	display: inline-block;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: normal;
 	padding: 10px 13px;
 }
 
@@ -810,6 +810,23 @@ div.item h2 {
 }
 
 @media screen and (min-width: 1200px) {
+	#primary {
+		width: 70% !important;
+	}
+
+	#secondary {
+		width: 30% !important;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	#primary {
+		width: 75% !important;
+	}
+
+	#secondary {
+		width: 25% !important;
+	}
 }
 
 /* === CSS for Width less than 844px ===
