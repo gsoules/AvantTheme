@@ -822,6 +822,10 @@ div.item h2 {
 		width: 10%;
 	}
 
+	.offset-by-three.columns {
+		margin-left: 14%;
+	}
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -882,6 +886,11 @@ div.item h2 {
 	.two.columns {
 		width: 129px;
 	}
+
+	.offset-by-three.columns {
+		margin-left: 26%;
+	}
+
 }
 
 /* === CSS for Width < 600px (Mobile Landscape) ===
