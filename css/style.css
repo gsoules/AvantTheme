@@ -817,6 +817,11 @@ div.item h2 {
 	#secondary {
 		width: 30% !important;
 	}
+
+	.two.columns {
+		width: 10%;
+	}
+
 }
 
 @media screen and (min-width: 1600px) {
