@@ -19,6 +19,7 @@
 		jQuery("#nav-toggle").click(function(){
 			jQuery("#top-nav").slideToggle(function(){ if (state) {jQuery(this).removeAttr( 'style' )}; state = ! state; } );
 		});
+		jQuery("#menu").show();
     });
     </script>
 

@@ -368,6 +368,7 @@ th, td {
 	grid-area: menu;
 	background-color: var(--background-color);
 	border-top: 2px solid #fff;
+	display:none;
 }
 
 .nav-menu {
