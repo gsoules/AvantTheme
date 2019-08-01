@@ -312,10 +312,6 @@ th, td {
 	width: 73%;
 }
 
-.offset-by-three.columns {
-	margin-left: 26%;
-}
-
 .pagination-nav input {
 	display: inline;
 	margin: 0 5px 0 0;
@@ -846,11 +842,6 @@ div.item h2 {
 	#secondary {
 		width: 30% !important;
 	}
-
-	.offset-by-three.columns {
-		margin-left: 14%;
-	}
-
 }
 
 @media screen and (min-width: 1600px) {
@@ -898,12 +889,6 @@ div.item h2 {
 		width: 70%;
 	}
 
-	/* Handle indent of multiple Title or Subject lines on items/show page */
-	.offset-by-three.column,
-	.offset-by-three.columns {
-		margin-left: 24.5%;
-	}
-
 	#primary {
 		max-width: 844px;
 	}
@@ -911,11 +896,6 @@ div.item h2 {
 	.two.columns {
 		width: 129px;
 	}
-
-	.offset-by-three.columns {
-		margin-left: 26%;
-	}
-
 }
 
 /* === CSS for Width < 600px (Mobile Landscape) ===
@@ -1052,11 +1032,5 @@ This is the break when the menu collapes to a burger icon.
 	h1 {
 		line-height: 20px;
 		margin-bottom: .5em;
-	}
-
-	/* Handle indent of multiple Title or Subject lines */
-	.offset-by-three.column,
-	.offset-by-three.columns {
-		margin-left: 4%;
 	}
 }
