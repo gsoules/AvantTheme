@@ -25,7 +25,7 @@ $privateElementsData = CommonConfig::getOptionDataForPrivateElements();
             <?php $class = in_array($elementName, $privateElementsData) ? ' private-element' : ''; ?>
             <div class="element-metadata-element<?php echo $class;?>">
                 <?php
-                echo html_escape(__($elementName)) . ':';
+                echo html_escape($elementName) . ':';
                 ?>
             </div>
             <div class="element-metadata-value">
