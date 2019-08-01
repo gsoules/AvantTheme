@@ -290,28 +290,6 @@ th, td {
 	line-height: 42px;
 }
 
-.column,
-.columns {
-	box-sizing: border-box;
-	float: left;
-	margin-left: 4%;
-	width: 100%;
-}
-
-.column:first-child,
-.columns:first-child {
-	margin-left: 0;
-}
-
-/* two and five are used for the metadata on items/show */
-.two.columns {
-	width: 22%;
-}
-
-.five.columns {
-	width: 73%;
-}
-
 .pagination-nav input {
 	display: inline;
 	margin: 0 5px 0 0;
@@ -885,16 +863,8 @@ div.item h2 {
 		width: 100%;
 	}
 
-	.five.columns {
-		width: 70%;
-	}
-
 	#primary {
 		max-width: 844px;
-	}
-
-	.two.columns {
-		width: 129px;
 	}
 }
 
@@ -909,10 +879,6 @@ This is the break when the menu collapes to a burger icon.
 
 	#admin-bar .navigation li a {
 		width: inherit;
-	}
-
-	.five.columns {
-		width: 90%;
 	}
 
 	#nav-toggle {
