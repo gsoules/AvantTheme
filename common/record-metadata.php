@@ -29,12 +29,8 @@ $privateElementsData = CommonConfig::getOptionDataForPrivateElements();
                 ?>
             </div>
             <div class="element-metadata-value">
-                <?php foreach ($elementInfo['texts'] as $index => $text):
-                    if ($index == 0): ?>
-                        <div class="element-metadata-value"><?php echo $text; ?></div>
-                    <?php else: ?>
-                        <div class="element-metadata-value"><?php echo $text; ?></div>
-                    <?php endif; ?>
+                <?php foreach ($elementInfo['texts'] as $text): ?>
+                    <div class="element-metadata-value"><?php echo $text; ?></div>
                 <?php endforeach; ?>
             </div>
         </div>
