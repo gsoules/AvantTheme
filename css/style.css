@@ -489,6 +489,34 @@ th, td {
 	padding-left: 8px;
 }
 
+.item-element-metadata {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: min-content;
+	grid-gap: 8px;
+}
+
+.element-metadata-row {
+	display: grid;
+	grid-template-columns: 110px 1fr;
+	grid-gap: 8px;
+	grid-template-areas:
+		"elementcol	valuecol";
+}
+
+.element-metadata-element {
+	grid-area: elementcol;
+	text-align: right;
+	color: #333;
+	font-variant: small-caps;
+}
+
+.element-metadata-value {
+	grid-area: valuecol;
+	color: #000;
+}
+
+
 /* Draw line between multiple Subject or Title elements */
 .element .element-text:after {
 	background-color: #dbdbdb;

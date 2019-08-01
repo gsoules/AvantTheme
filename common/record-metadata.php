@@ -19,23 +19,24 @@ else
 $privateElementsData = CommonConfig::getOptionDataForPrivateElements();
 ?>
 
-<div class="element-set">
+<div class="item-element-metadata">
     <?php foreach ($elementSet as $elementName => $elementInfo): ?>
-        <div id="<?php echo text_to_id(html_escape("{$elementInfo['element']['set_name']} $elementName")); ?>" class="element">
-            <div class="field two columns alpha">
+        <div id="<?php echo text_to_id(html_escape("{$elementInfo['element']['set_name']} $elementName")); ?>" class="element-metadata-row">
+            <?php $class = in_array($elementName, $privateElementsData) ? ' private-element' : ''; ?>
+            <div class="element-metadata-element<?php echo $class;?>">
                 <?php
-                // Style the element label to indicate whether the field is private.
-                $class = in_array($elementName, $privateElementsData) ? ' class="private-element"' : '';
-                echo "<label$class>" . html_escape(__($elementName)) . "</label>";
+                echo html_escape(__($elementName)) . ':';
                 ?>
             </div>
-            <?php foreach ($elementInfo['texts'] as $index => $text):
-                if ($index == 0): ?>
-                    <div class="element-text five columns omega"><p><?php echo $text; ?></p></div>
-                <?php else: ?>
-                    <div class="element-text five columns offset-by-three"><p><?php echo $text; ?></p></div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+            <div class="element-metadata-value">
+                <?php foreach ($elementInfo['texts'] as $index => $text):
+                    if ($index == 0): ?>
+                        <div class="element-metadata-value"><?php echo $text; ?></div>
+                    <?php else: ?>
+                        <div class="element-metadata-value"><?php echo $text; ?></div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     <?php endforeach; ?>
 </div>
