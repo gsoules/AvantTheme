@@ -472,7 +472,7 @@ th, td {
 
 .element-metadata-row {
 	display: grid;
-	grid-template-columns: 110px 1fr;
+	grid-template-columns: 140px 1fr;
 	grid-gap: 8px;
 	grid-template-areas:
 		"elementcol	valuecol";
