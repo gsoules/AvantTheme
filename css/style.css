@@ -472,7 +472,7 @@ th, td {
 
 .element-metadata-row {
 	display: grid;
-	grid-template-columns: 140px 1fr;
+	grid-template-columns: 90px 1fr;
 	grid-gap: 8px;
 	grid-template-areas:
 		"elementcol	valuecol";
@@ -799,6 +799,10 @@ div.item h2 {
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
 	}
+
+	.element-metadata-row {
+		grid-template-columns: 140px 1fr;
+	}
 }
 
 @media screen and (min-width: 960px) {
@@ -865,6 +869,10 @@ div.item h2 {
 
 	#primary {
 		max-width: 844px;
+	}
+
+	.item-file.image-jpeg {
+		margin-left:8px;
 	}
 }
 
