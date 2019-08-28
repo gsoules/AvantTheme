@@ -160,6 +160,8 @@ if ($zoomingEnabled)
     if (is_allowed($item, 'edit')) {
         echo 'Admin: ';
         echo '<a href="' . admin_url('/items/edit/' . $item->id) . '" target="_blank">Edit</a>';
+        echo ' | ';
+        echo '<a href="' . admin_url('/items/show/' . $item->id) . '" target="_blank">View</a>';
     }
     ?>
 </div>
