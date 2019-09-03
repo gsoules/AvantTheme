@@ -167,6 +167,8 @@ if ($zoomingEnabled)
 </div>
 
 <?php
+echo $this->partial('recent-items-script.php', array('itemId' => $item->id));
+
 if ($zoomingEnabled)
 {
     echo $this->partial('avantzoom-script.php', array('viewerScript' => $viewerScript));
