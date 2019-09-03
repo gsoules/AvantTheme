@@ -141,6 +141,15 @@ if ($zoomingEnabled)
         <?php endif; ?>
     </div>
 
+    <?php
+    if (is_allowed($item, 'edit')) {
+        echo 'Admin: ';
+        echo '<a href="' . admin_url('/items/edit/' . $item->id) . '" target="_blank">Edit</a>';
+        echo ' | ';
+        echo '<a href="' . admin_url('/items/show/' . $item->id) . '" target="_blank">View</a>';
+    }
+    ?>
+
     <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
     <?php echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 
@@ -156,14 +165,40 @@ if ($zoomingEnabled)
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
 
+    <div id="recently-viewed-items">
     <?php
-    if (is_allowed($item, 'edit')) {
-        echo 'Admin: ';
-        echo '<a href="' . admin_url('/items/edit/' . $item->id) . '" target="_blank">Edit</a>';
-        echo ' | ';
-        echo '<a href="' . admin_url('/items/show/' . $item->id) . '" target="_blank">View</a>';
+    echo "<div id='recently-viewed-items-title'>Recently Viewed Items</div>";
+    $recentItemIds = isset($_COOKIE['ITEMS']) ? explode(',', $_COOKIE['ITEMS']) : array();
+    $thisItemIdentifier = ItemMetadata::getItemIdentifier($item);
+
+    $identifierList = $thisItemIdentifier;
+    echo "<div class='recently-viewed-item'>$title</div>";
+
+    foreach ($recentItemIds as $recentItemId)
+    {
+        $recentItem = ItemMetadata::getItemFromId($recentItemId);
+        $identifier = ItemMetadata::getItemIdentifier($recentItem);
+
+        if ($identifier == $thisItemIdentifier)
+        {
+            // Skip the item currently being shown.
+            continue;
+        }
+
+        $identifierList .= '|' . $identifier;
+        $title = ItemMetadata::getItemTitle($recentItem);
+        $itemUrl = public_url('/items/show/' . $recentItem->id);
+        echo "<div id='recent-$recentItemId' class='recently-viewed-item'><a href='$itemUrl'>$title</a> <span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . '</span></div>';
+    }
+
+    $count = count($recentItemIds);
+    if ($count > 1)
+    {
+        $findUrl = ItemSearch::getAdvancedSearchUrl(ItemMetadata::getIdentifierElementId(), $identifierList, 'contains');
+        echo "<div id='recently-viewed-all'><a href='$findUrl'>View all recent items</a></div>";
     }
     ?>
+    </div>
 </div>
 
 <?php
