@@ -75,6 +75,17 @@ if ($zoomingEnabled)
 
 <div id="secondary">
     <?php
+    if (is_allowed($item, 'edit')) {
+        echo '<div class="admin-links">';
+        echo 'Admin: ';
+        echo '<a href="' . admin_url('/items/edit/' . $item->id) . '" target="_blank">Edit</a>';
+        echo ' | ';
+        echo '<a href="' . admin_url('/items/show/' . $item->id) . '" target="_blank">View</a>';
+        echo '</div>';
+    }
+    ?>
+
+    <?php
         $coverImageItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
         if (!empty($coverImageItem)) {
             ?>
@@ -141,15 +152,6 @@ if ($zoomingEnabled)
         <?php endif; ?>
     </div>
 
-    <?php
-    if (is_allowed($item, 'edit')) {
-        echo 'Admin: ';
-        echo '<a href="' . admin_url('/items/edit/' . $item->id) . '" target="_blank">Edit</a>';
-        echo ' | ';
-        echo '<a href="' . admin_url('/items/show/' . $item->id) . '" target="_blank">View</a>';
-    }
-    ?>
-
     <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
     <?php echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 
@@ -165,7 +167,6 @@ if ($zoomingEnabled)
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
 
-    <div id="recently-viewed-items">
     <?php
     $cookieValue = isset($_COOKIE['ITEMS']) ? $_COOKIE['ITEMS'] : '';
     $recentItemIds = empty($cookieValue) ? array() : explode(',', $cookieValue);
