@@ -167,38 +167,66 @@ if ($zoomingEnabled)
 
     <div id="recently-viewed-items">
     <?php
-    echo "<div id='recently-viewed-items-title'>Recently Viewed Items</div>";
-    $recentItemIds = isset($_COOKIE['ITEMS']) ? explode(',', $_COOKIE['ITEMS']) : array();
-    $thisItemIdentifier = ItemMetadata::getItemIdentifier($item);
+    $cookieValue = isset($_COOKIE['ITEMS']) ? $_COOKIE['ITEMS'] : '';
+    $recentItemIds = empty($cookieValue) ? array() : explode(',', $cookieValue);
 
-    $identifierList = $thisItemIdentifier;
-    echo "<div class='recently-viewed-item'>$title</div>";
-
-    foreach ($recentItemIds as $recentItemId)
+    $showRecentItems = count($recentItemIds) >= 1;
+    if ($showRecentItems && count($recentItemIds) == 1 && $recentItemIds[0] == $item->id)
     {
-        $recentItem = ItemMetadata::getItemFromId($recentItemId);
-        $identifier = ItemMetadata::getItemIdentifier($recentItem);
+        // Don't show recent items if the only item is the one currently being shown.
+        $showRecentItems = false;
+    }
 
-        if ($identifier == $thisItemIdentifier)
+    if ($showRecentItems)
+    {
+        echo '<div id="recently-viewed-items">';
+        echo "<div id='recently-viewed-items-title'>Recently Viewed Items</div>";
+        $thisItemIdentifier = ItemMetadata::getItemIdentifier($item);
+
+        $identifierList = $thisItemIdentifier;
+        echo "<div class='recently-viewed-item'>$title</div>";
+        $count = 1;
+
+        foreach ($recentItemIds as $recentItemId)
         {
-            // Skip the item currently being shown.
-            continue;
+            if (intval($recentItemId) == 0)
+            {
+                // This should never happen, but check in case the cookie is somehow corrupted.
+                continue;
+            }
+
+            $recentItem = ItemMetadata::getItemFromId($recentItemId);
+
+            if (empty($recentItem))
+            {
+                // Ignore any items that no longer exist.
+                continue;
+            }
+
+            $recentIdentifier = ItemMetadata::getItemIdentifier($recentItem);
+
+            if ($recentIdentifier == $thisItemIdentifier)
+            {
+                // Skip the item currently being shown.
+                continue;
+            }
+
+            $identifierList .= '|' . $recentIdentifier;
+            $title = ItemMetadata::getItemTitle($recentItem);
+            $itemUrl = public_url('/items/show/' . $recentItem->id);
+            $toolTip = __('Item %s', $recentIdentifier);
+            echo "<div id='recent-$recentItemId' class='recently-viewed-item' data-identifier='$recentIdentifier'><a href='$itemUrl' title='$toolTip'>$title</a> <span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . '</span></div>';
+            $count += 1;
         }
 
-        $identifierList .= '|' . $identifier;
-        $title = ItemMetadata::getItemTitle($recentItem);
-        $itemUrl = public_url('/items/show/' . $recentItem->id);
-        echo "<div id='recent-$recentItemId' class='recently-viewed-item'><a href='$itemUrl'>$title</a> <span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . '</span></div>';
-    }
-
-    $count = count($recentItemIds);
-    if ($count > 1)
-    {
+        $viewAllText = __('View these %s recent items as search results', $count);
+        $clearAllText = __('Clear all recent items');
         $findUrl = ItemSearch::getAdvancedSearchUrl(ItemMetadata::getIdentifierElementId(), $identifierList, 'contains');
-        echo "<div id='recently-viewed-all'><a href='$findUrl'>View all recent items</a></div>";
+        echo "<div id='recently-viewed-all'><a href='$findUrl'>$viewAllText</a></div>";
+        echo "<div id='recently-viewed-clear'>$clearAllText <span id='recently-viewed-clear-x'>" . '&#10006;' . '</span></div>';
+        echo '</div>'; // recently-viewed-items
     }
     ?>
-    </div>
 </div>
 
 <?php
