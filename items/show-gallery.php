@@ -83,10 +83,5 @@ foreach ($relatedItems as $relatedItem)
 
 <?php
 if (is_allowed($item, 'edit'))
-{
-    echo 'Admin: ';
-    echo '<a href="' . admin_url('/items/edit/' . $item->id) . '">Edit</a>';
-    echo ' | ';
-    echo '<a href="' . admin_url('/items/show/' . $item->id) . '">Show</a>';
-}
+    echo AvantCommon::emitAdminLinksHtml($item->id, 'gallery-links');
 ?>
