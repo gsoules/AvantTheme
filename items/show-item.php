@@ -158,7 +158,7 @@ if ($zoomingEnabled)
 
     <?php
     if (is_allowed($item, 'edit'))
-        echo AvantCommon::emitAdminLinksHtml($item->id, 'show-page-links');
+        echo AvantCommon::emitAdminLinksHtml($item->id, 'show-page-links', false);
 
     $cookieValue = isset($_COOKIE['ITEMS']) ? $_COOKIE['ITEMS'] : '';
     $recentItemIds = empty($cookieValue) ? array() : explode(',', $cookieValue);
@@ -208,7 +208,7 @@ if ($zoomingEnabled)
             $title = ItemMetadata::getItemTitle($recentItem);
             $itemUrl = public_url('/items/show/' . $recentItem->id);
             $toolTip = __('Item %s', $recentIdentifier);
-            echo "<div id='recent-$recentItemId' class='recently-viewed-item' data-identifier='$recentIdentifier'><a href='$itemUrl' title='$toolTip'>$title</a> <span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . '</span></div>';
+            echo "<div id='recent-$recentItemId' class='recently-viewed-item' data-identifier='$recentIdentifier'><span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . "</span>&nbsp;&nbsp;<a href='$itemUrl' title='$toolTip'>$title</a></div>";
             $count += 1;
         }
 
@@ -216,7 +216,7 @@ if ($zoomingEnabled)
         $clearAllText = __('Clear all recent items');
         $findUrl = ItemSearch::getAdvancedSearchUrl(ItemMetadata::getIdentifierElementId(), $identifierList, 'contains');
         echo "<div id='recently-viewed-all'><a href='$findUrl'>$viewAllText</a></div>";
-        echo "<div id='recently-viewed-clear'>$clearAllText <span id='recently-viewed-clear-x'>" . '&#10006;' . '</span></div>';
+        echo "<div id='recently-viewed-clear'><span id='recently-viewed-clear-x'>" . '&#10006;' . '</span>&nbsp;&nbsp;' . $clearAllText . '</div>';
         echo '</div>'; // recently-viewed-items
     }
     ?>
