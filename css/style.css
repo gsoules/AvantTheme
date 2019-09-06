@@ -620,16 +620,26 @@ th, td {
 }
 
 #secondary .item-file {
+	position: relative;
 	border: 1px solid #ddd;
   	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
 	display: inline-block;
-	height: 88px;
+	height: 104px;
 	margin: 0 6px 6px 0;
-	max-height: 88px;
-	padding: 3px;
+	max-height: 104px;
+	padding: 2px;
 	text-align: center;
 	vertical-align: top;
   	width: 94px;
+}
+
+.item-file-index {
+	position: absolute;
+	color: #ccc;
+	font-size: 18px;
+	font-weight: bold;
+	top: 82px;
+	left: 40px;
 }
 
 div.item {

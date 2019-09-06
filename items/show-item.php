@@ -65,6 +65,9 @@ if ($zoomingEnabled)
     // Emit the item's fields.
     echo all_element_texts($item);
 
+    if (is_allowed($item, 'edit'))
+        echo AvantCommon::emitAdminLinksHtml($item->id, 'show-page-links', false);
+
     // If this item has a cover image, that image will appear in the sidebar, so pass it to
     // admin_items_show to indicate that the image should be excluded from the list of related items.
     $excludeItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
@@ -129,10 +132,10 @@ if ($zoomingEnabled)
         }
 
         $imageHtml = '';
-        foreach ($itemFiles as $itemFile)
+        foreach ($itemFiles as $index => $itemFile)
         {
             $showThumbnail = true;
-            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail);
+            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail, $index);
         }
         ?>
 
@@ -155,71 +158,6 @@ if ($zoomingEnabled)
         <h2>Citation</h2>
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
-
-    <?php
-    if (is_allowed($item, 'edit'))
-        echo AvantCommon::emitAdminLinksHtml($item->id, 'show-page-links', false);
-
-    $cookieValue = isset($_COOKIE['ITEMS']) ? $_COOKIE['ITEMS'] : '';
-    $recentItemIds = empty($cookieValue) ? array() : explode(',', $cookieValue);
-
-    $showRecentItems = count($recentItemIds) >= 1;
-    if ($showRecentItems && count($recentItemIds) == 1 && $recentItemIds[0] == $item->id)
-    {
-        // Don't show recent items if the only item is the one currently being shown.
-        $showRecentItems = false;
-    }
-
-    if ($showRecentItems)
-    {
-        echo '<div id="recently-viewed-items">';
-        echo "<div id='recently-viewed-items-title'>Recently Viewed Items</div>";
-        $thisItemIdentifier = ItemMetadata::getItemIdentifier($item);
-
-        $identifierList = $thisItemIdentifier;
-        echo "<div class='recently-viewed-item'>$title</div>";
-        $count = 1;
-
-        foreach ($recentItemIds as $recentItemId)
-        {
-            if (intval($recentItemId) == 0)
-            {
-                // This should never happen, but check in case the cookie is somehow corrupted.
-                continue;
-            }
-
-            $recentItem = ItemMetadata::getItemFromId($recentItemId);
-
-            if (empty($recentItem))
-            {
-                // Ignore any items that no longer exist.
-                continue;
-            }
-
-            $recentIdentifier = ItemMetadata::getItemIdentifier($recentItem);
-
-            if ($recentIdentifier == $thisItemIdentifier)
-            {
-                // Skip the item currently being shown.
-                continue;
-            }
-
-            $identifierList .= '|' . $recentIdentifier;
-            $title = ItemMetadata::getItemTitle($recentItem);
-            $itemUrl = public_url('/items/show/' . $recentItem->id);
-            $toolTip = __('Item %s', $recentIdentifier);
-            echo "<div id='recent-$recentItemId' class='recently-viewed-item' data-identifier='$recentIdentifier'><span class='recently-viewed-item-removed' data-item-id='$recentItemId'>" . '&#10006;' . "</span>&nbsp;&nbsp;<a href='$itemUrl' title='$toolTip'>$title</a></div>";
-            $count += 1;
-        }
-
-        $viewAllText = __('View these %s recent items as search results', $count);
-        $clearAllText = __('Clear all recent items');
-        $findUrl = ItemSearch::getAdvancedSearchUrl(ItemMetadata::getIdentifierElementId(), $identifierList, 'contains');
-        echo "<div id='recently-viewed-all'><a href='$findUrl'>$viewAllText</a></div>";
-        echo "<div id='recently-viewed-clear'><span id='recently-viewed-clear-x'>" . '&#10006;' . '</span>&nbsp;&nbsp;' . $clearAllText . '</div>';
-        echo '</div>'; // recently-viewed-items
-    }
-    ?>
 </div>
 
 <?php
