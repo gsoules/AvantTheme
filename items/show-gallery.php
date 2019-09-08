@@ -83,7 +83,7 @@ foreach ($relatedItems as $relatedItem)
 
 <?php
 if (is_allowed($item, 'edit'))
-    echo AvantCommon::emitAdminLinksHtml($item->id, 'gallery-links', false);
+    echo AvantCommon::emitAdminLinksHtml($item->id, 'gallery-links', false, true);
 
 echo $this->partial('recent-items-script.php', array('itemId' => $item->id));
 ?>
