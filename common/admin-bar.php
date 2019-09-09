@@ -1,10 +1,10 @@
 <nav id="admin-bar">
 
-<?php if($user = current_user()) {
-
+<?php if (AvantCommon::userIsAdmin())
+{
     $links = array(
         array(
-            'label' => $user->name,
+            'label' => current_user()->name,
             'uri' => admin_url('/')
         ),
         array(
@@ -17,7 +17,9 @@
         )
     );
 
-} else {
+}
+else
+{
     $links = array();
 }
 
