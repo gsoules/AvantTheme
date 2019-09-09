@@ -8,10 +8,6 @@
             'uri' => admin_url('/')
         ),
         array(
-            'label' => __('Add item'),
-            'uri' => admin_url('/items/add/')
-        ),
-        array(
             'label' => __('Logout'),
             'uri' => url('/users/logout')
         )
