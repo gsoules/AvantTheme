@@ -4,8 +4,12 @@
 
     $links = array(
         array(
-            'label' => __($user->name),
+            'label' => $user->name,
             'uri' => admin_url('/')
+        ),
+        array(
+            'label' => __('Add item'),
+            'uri' => admin_url('/items/add/')
         ),
         array(
             'label' => __('Logout'),
