@@ -488,6 +488,7 @@ th, td {
 .element-metadata-value {
 	grid-area: valuecol;
 	color: #000;
+	padding-bottom: 8px;
 }
 
 
