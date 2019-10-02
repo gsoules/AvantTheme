@@ -776,6 +776,14 @@ div.item h2 {
 	font-size: 12px;
 }
 
+#login-form {
+	width: 300px;
+}
+
+form#login-form fieldset#fieldset-login {
+	padding-top: 24px;
+}
+
 /* Add a box shadow around the entire page area. */
 /* Set content width the same as WP website width */
 /* Remove padding so banner and menu are flush with left and right */
