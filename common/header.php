@@ -57,7 +57,11 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     ?>
 
     <?php
-    queue_js_file('vendor/jquery-accessibleMegaMenu');
+    // Use the AvantTheme version of jquery-accessibleMegaMenu instead of the one that ships with Omeka to avoid
+    // this warning: "Use of Mutation Events is deprecated. Use MutationObserver instead."
+    //queue_js_file('vendor/jquery-accessibleMegaMenu');
+    queue_js_file('jquery-accessibleMegaMenu');
+
     queue_js_file('avant');
     queue_js_file('globals');
     echo head_js();
