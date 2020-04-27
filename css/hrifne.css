@@ -1,5 +1,5 @@
 :root {
-    --background-color: #e5c886;
+    --background-color: #ece3ca;
     --link-color: #3d5a98;
     --link-hover-color: #7596b9;
     --nav-link-color: #750e11;
@@ -37,4 +37,17 @@ footer {
 /* Add space above an element immediately following an other which is the case when an element has multiple values. */
 div.element-metadata-value + div.element-metadata-value {
     margin-top: 8px;
+}
+
+.event-link:link,
+.event-link:visited {
+    color: red;
+}
+
+.search-td-image-fallback img {
+    width: 80px;
+}
+
+.item-preview .item-img.fallback-image {
+    width: 80px;
 }
