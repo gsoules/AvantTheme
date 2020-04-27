@@ -507,9 +507,7 @@ th, td {
 	margin-bottom: 0;
 }
 
-/* Set standard bottom margin for text elements */
 .element-text {
-	margin-bottom:6px;
 	font-size: 14px;
 }
 
