@@ -485,11 +485,17 @@ th, td {
 	font-variant: small-caps;
 }
 
-.element-metadata-value {
+.element-metadata-values {
 	grid-area: valuecol;
 	color: #000;
 }
 
+.element-metadata-value-multiple {
+	border-top: solid 1px #ccc;
+	margin-top: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
 
 /* Draw line between multiple Subject or Title elements */
 .element .element-text:after {

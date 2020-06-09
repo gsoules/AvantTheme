@@ -28,9 +28,10 @@ $privateElementsData = CommonConfig::getOptionDataForPrivateElements();
                 echo html_escape($elementName) . ':';
                 ?>
             </div>
-            <div class="element-metadata-value">
-                <?php foreach ($elementInfo['texts'] as $text): ?>
-                    <div class="element-metadata-value"><?php echo $text; ?></div>
+            <div class="element-metadata-values">
+                <?php foreach ($elementInfo['texts'] as $index => $text): ?>
+                    <?php $class = $index > 0 ? ' class="element-metadata-value-multiple"' : '' ?>
+                    <div<?php echo $class; ?>><?php echo $text; ?></div>
                 <?php endforeach; ?>
             </div>
         </div>
