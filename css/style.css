@@ -492,6 +492,7 @@ th, td {
 
 .element-metadata-value-multiple {
 	border-top: solid 1px #ccc;
+	border-image: linear-gradient(to right, #ccc, white) 1 stretch;
 	margin-top: 2px;
 	padding-top: 1px;
 	padding-bottom: 1px;
