@@ -41,7 +41,7 @@ $privateElementsData = CommonConfig::getOptionDataForPrivateElements();
     if (is_allowed($item, 'edit'))
     {
         echo '<div class="element-metadata-row">';
-        echo '<div class="element-metadata-value">';
+        echo '<div class="element-metadata-values">';
         if (plugin_is_active('AvantAdmin'))
             echo AvantAdmin::emitAdminLinksHtml($item->id, 'show-page-links', false);
         echo '</div>';
