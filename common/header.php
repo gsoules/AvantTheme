@@ -11,6 +11,7 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     <?php if ( $description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>" />
     <?php endif; ?>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <?php
     if (isset($title)) {
         $titleParts[] = strip_formatting($title);
