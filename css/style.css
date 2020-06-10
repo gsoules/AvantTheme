@@ -375,7 +375,7 @@ th, td {
 	display: inline-block;
 	font-size: 16px;
 	font-weight: normal;
-	padding: 10px 13px;
+	padding: 4px 12px 6px 12px;
 }
 
 .active.nav-item {
@@ -957,7 +957,6 @@ This is the break when the menu collapes to a burger icon.
 		border-color: #2a0300;
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		font-size: 16px;
-		padding: 10px 13px;
 	}
 
 	#top-nav {
