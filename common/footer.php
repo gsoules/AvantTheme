@@ -18,7 +18,7 @@
                     {
                         $organizationName = $parts[0];
                         $organizationUrl = $parts[1];
-                        $organizationLink = empty($parts[1]) ? $organizationName : "<a href=''$organizationUrl' title='$organizationName'>$organizationName</a>";
+                        $organizationLink = empty($parts[1]) ? $organizationName : "<a href='$organizationUrl' title='$organizationName'>$organizationName</a>";
                         $avantLogicLink = "Created by <a href='http://avantlogic.com/' target='_blank' title='AvantLogic Corporation' rel='noreferrer noopener'>AvantLogic</a>";
                         $loginUrl = url('users/login');
                         $logoutUrl = url('users/logout');
