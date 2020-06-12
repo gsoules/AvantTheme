@@ -808,7 +808,7 @@ form#login-form fieldset#fieldset-login {
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
-	padding: 0;
+	padding: 0 0;
 	max-width: 2400px;
 }
 
@@ -829,6 +829,7 @@ form#login-form fieldset#fieldset-login {
 
 @media screen and (min-width: 960px) {
 	#wrap {
+		padding: 8px 16px;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
 			"header	 header  header	 search  search"
