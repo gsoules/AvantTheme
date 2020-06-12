@@ -829,7 +829,7 @@ form#login-form fieldset#fieldset-login {
 
 @media screen and (min-width: 960px) {
 	#wrap {
-		padding: 8px 16px;
+		padding: 0 16px;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
 			"header	 header  header	 search  search"
