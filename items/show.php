@@ -8,33 +8,18 @@ if (!plugin_is_active('AvantCommon'))
     return;
 }
 
-$requestParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+// Emit the Show page for this item.
 
-if (isset($requestParams['share']))
+$itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
+
+if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
 {
-    // The request is to return the item's sharable assets, namely its thumbnail and image URLs.
-    // If the item has no image, just the site name gets returned.
-
-    $json = ItemMetadata::emitSharedItemAssets($item);
-    $response = Zend_Controller_Front::getInstance()->getResponse();
-    $response->setHeader('Content-Type', 'application/json', true);
-    echo $json;
+    echo $this->partial('/items/show-gallery.php', array('item' => $item));
 }
 else
 {
-    // Emit the Show page for this item.
-
-    $itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
-
-    if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
-    {
-        echo $this->partial('/items/show-gallery.php', array('item' => $item));
-    }
-    else
-    {
-        echo $this->partial('/items/show-item.php', array('item' => $item));
-    }
-
-    echo foot();
+    echo $this->partial('/items/show-item.php', array('item' => $item));
 }
+
+echo foot();
 ?>
