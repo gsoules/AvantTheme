@@ -331,6 +331,11 @@ th, td {
 	align-self: center;
 }
 
+#header a {
+	font-size: 3vw;
+	padding-left: 12px;
+}
+
 #header > a > img
 {
 	max-width: 100%
@@ -769,16 +774,15 @@ div.item h2 {
  	color: var(--link-hover-color);
 }
 
-.footerLinks {
-	/*float:right;*/
-	margin-right: 16px;
-}
-
 #footer-text {
 	/*max-width:960px;*/
-	padding: 1px 0 1px 10px;
+	padding: 4px 0 1px 10px;
 	width:100%;
 	font-size: 12px;
+}
+
+#footer-loginout {
+	padding-top: 4px;
 }
 
 #login-form {
@@ -836,6 +840,10 @@ form#login-form fieldset#fieldset-login {
 			"menu	 menu  	 menu	 menu  	 menu"
 			"content content content content content"
 			"footer  footer  footer  footer  footer";
+	}
+
+	#header a {
+		padding-left: 0;
 	}
 }
 
