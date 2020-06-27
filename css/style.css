@@ -1,11 +1,11 @@
 :root {
+	--header-color: #1a77bd;
 	--background-color: #eee;
 	--link-color: #3d5a98;
 	--link-hover-color: #7596b9;
 	--nav-link-color: #777;
 	--nav-link-hover-color: #999;
     --nav-menu-hover-color: #7596b9;
-	--header-color: #1a77bd;
 }
 
 html {
@@ -329,10 +329,11 @@ th, td {
 	grid-area: header;
 	background-color: var(--background-color);
 	align-self: center;
+	margin-top: 8px;
 }
 
 #header a {
-	font-size: 3vw;
+	font-size: 4.5vw;
 	padding-left: 12px;
 }
 
@@ -346,7 +347,7 @@ th, td {
 #menu {
 	grid-area: menu;
 	background-color: var(--background-color);
-	border-top: 2px solid #fff;
+	/*border-top: 2px solid #fff;*/
 	display:none;
 }
 
@@ -361,13 +362,17 @@ th, td {
  	color: var(--nav-link-color);
 }
 
+/*.nav-menu a:hover, .nav-menu a:focus {*/
+/* 	background-color: var(--nav-menu-hover-color);*/
+/*}*/
+
 .nav-menu a:hover, .nav-menu a:focus {
- 	background-color: var(--nav-menu-hover-color);
+	color: var(--nav-menu-hover-color);
 }
 
 .nav-item {
-	border-right: 1px solid #2a0300;
-	box-shadow: 1px 0 0 #60391a;
+	/*border-right: 1px solid #2a0300;*/
+	/*box-shadow: 1px 0 0 #60391a;*/
 	display: block;
 	float: left;
 	list-style: none;
@@ -378,12 +383,12 @@ th, td {
 
 .nav-item > a {
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: normal;
 	padding: 4px 12px 6px 12px;
 }
 
-.active.nav-item {
+li.active.nav-item > a {
     font-weight: bold;
 }
 
@@ -775,14 +780,20 @@ div.item h2 {
 }
 
 #footer-text {
-	/*max-width:960px;*/
-	padding: 4px 0 1px 10px;
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 4px 6px 2px;
 	width:100%;
 	font-size: 12px;
 }
 
 #footer-loginout {
-	padding-top: 4px;
+	display: flex;
+	font-size: 12px;
+}
+
+#footer-loginout > span {
+	align-self: flex-end;
 }
 
 #login-form {
@@ -829,6 +840,16 @@ form#login-form fieldset#fieldset-login {
 	.element-metadata-row {
 		grid-template-columns: 140px 1fr;
 	}
+
+	#header a {
+		font-size: 2vw;
+	}
+}
+
+@media screen and (min-width: 760px) {
+	#header a {
+		font-size: 18px;
+	}
 }
 
 @media screen and (min-width: 960px) {
@@ -842,8 +863,13 @@ form#login-form fieldset#fieldset-login {
 			"footer  footer  footer  footer  footer";
 	}
 
+	#header {
+		margin-top: 0;
+	}
+
 	#header a {
-		padding-left: 0;
+		font-size: 32px;
+		padding-left: 4px;
 	}
 }
 

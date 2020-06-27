@@ -24,7 +24,7 @@
                 {
                     $footer = "$copyright $siteTitle";
                 }
-                $footer .= "<div id='footer-loginout'>$avantLogicLink — $loginLogoutLink</div>";
+                $footer = "<div>$footer</div><div id='footer-loginout'><span>$avantLogicLink — $loginLogoutLink</span></div>";
                 echo $footer;
 
                 fire_plugin_hook('public_footer', array('view'=>$this));
