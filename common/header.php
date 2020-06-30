@@ -21,7 +21,7 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     <title><?php echo implode(' &middot; ', $titleParts); ?></title>
 
     <?php
-    $globalSiteTag = get_theme_option('Global Site Tag');
+    $globalSiteTag = get_theme_option('global_site_tag');
     if (!empty($globalSiteTag))
     {
         // Emit Google Analytics tracking code for public users, but not for logged in users.
@@ -42,19 +42,27 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
     queue_css_file('iconfonts');
     queue_css_file('style');
 
-    $customCss = explode('.', get_theme_option('Custom CSS'))[0];
-    if (!empty($customCss))
+    $customCss = get_theme_option('css_file');
+    if ($customCss)
     {
-        try
+        $file = BASE_DIR . '/' . $customCss;
+        if (file_exists($file))
         {
-            queue_css_file($customCss);
-        }
-        catch (InvalidArgumentException $e)
-        {
+            $url = PUBLIC_BASE_URL . '/' . $customCss;
+            get_view()->headLink()->appendStylesheet($url, 'all', false);
         }
     }
 
     echo head_css();
+
+    $siteCss = get_theme_option('css_text');
+    if ($siteCss)
+    {
+        echo PHP_EOL . '<style>';
+        echo $siteCss;
+        echo '</style>'. PHP_EOL;
+    }
+
     ?>
 
     <?php
