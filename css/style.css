@@ -189,8 +189,7 @@ th, td {
 	border-bottom: 1px solid #ddd;
 }
 
-/* === Search Box in banner ===
---------------------------------------------------------- */
+/* Search Box in banner */
 #search-form {
 	display: grid;
 	grid-template-columns: 1fr auto;
