@@ -1,0 +1,446 @@
+:root {
+    --background-color: #482102;
+    --link-color: #c76941;
+    --link-hover-color: #e57f52;
+    --nav-link-color: #eee;
+    --nav-link-hover-color: #fff;
+    --nav-menu-hover-color: #843418;
+    --header-color: #1a77bd;
+    --metadata-implicit-link-color: #c76941;
+    --metadata-implicit-link-hover-color: #e57f52;
+}
+
+a.metadata-rights-link:link,
+a.metadata-rights-link:visited {
+    color: #777;
+}
+
+a.metadata-rights-link:hover {
+    color: #aaa;
+}
+
+footer {
+    padding: 0 0 6px 2px;
+}
+
+#footer-text {
+    padding: 10px 10px 3px;
+    font-size: 12px;
+}
+
+#footer-text,
+#footer a:link,
+#footer a:visited {
+    color: white;
+}
+
+
+/* ----- Exhibits ----- */
+
+.exhibit {
+    overflow: hidden;
+}
+
+.exhibits h1 {
+    color: #444;
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin: 6px 0;
+    overflow-wrap: break-word;
+}
+
+.browse .exhibit {
+    clear: both;
+}
+
+.browse .exhibit {
+    border-bottom: 1px dotted #ccc;
+    padding: 1em 0;
+}
+
+.browse .exhibit:last-of-type {
+    border-bottom: none;
+}
+
+.browse h2 {
+    color: #444444;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1em;
+    margin-top: 0;
+}
+
+.browse h2 a:link,
+.browse h2 a:visited {
+    color: #1a77bd;
+    text-decoration: none;
+}
+
+.browse h2 a:hover {
+    color: #843418;
+}
+
+.browse .exhibit img,
+.exhibit-description img {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    float: left;
+    margin-right: 1.5em;
+    max-width: 250px;
+}
+
+.exhibits.browse #content #primary {
+    padding-top: 12px;
+    padding-left: 16px;
+}
+
+.exhibits.browse #content #primary p {
+    font-size: 17px;
+    line-height: 1.3em;
+}
+
+.summary #exhibit-pages {
+    width: -moz-calc(35% - 1.5em);
+    width: -webkit-calc(35% - 1.5em);
+    width: calc(35% - 1.5em);
+    float: right;
+    position: relative;
+    overflow: visible;
+    margin-bottom: -1.5em;
+    padding: 1.5em 0;
+}
+
+.summary #exhibit-pages:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+    background-color: #DDD;
+    width: 1px;
+}
+
+#exhibit-pages > ul > li:not(.parent) li {
+    display: none;
+}
+
+#exhibit-pages > ul > li.current li {
+    display: block;
+}
+
+.summary #content > h1:first-of-type {
+    float: left;
+    width: 65%;
+}
+
+.summary #content > h1:first-of-type {
+    margin-right: 0.75em;
+}
+
+.summary #content #primary {
+    margin-right: 1.5em;
+}
+
+.exhibits #secondary h2 {
+    margin-bottom: 0.5em;
+}
+
+#exhibit-pages > ul > li {
+    margin-bottom: 1.5em;
+}
+
+#exhibit-pages ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+}
+
+#exhibit-pages ul ul {
+    padding-left: 1.5em;
+    margin-bottom: 0;
+}
+
+#exhibit-pages ul li {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+#exhibit-pages ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+#exhibit-pages ul a {
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    padding: 0.75em;
+    color: #fff;
+    background: #A49D4C;
+    border-width: 0 1px 1px 0;
+}
+
+#exhibit-pages ul a:hover {
+    background-color: #5e5a2c;
+    color: #fff;
+}
+
+#exhibit-pages .current > a {
+    background-color: #706b34;
+}
+
+#exhibit-page-navigation {
+    border-color: #ddd;
+    border-top-width: 0.07143em;
+    border-top-style: solid;
+    padding-top: 1.42857em;
+    margin: 1.5em 0 0;
+    float: left;
+    width: 100%;
+}
+
+.exhibit-block {
+    overflow: hidden;
+}
+
+.exhibit-block > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Summary Page */
+#content .exhibit-description h3,
+#content .exhibit-credits h3 {
+    color: #666666;
+    font-size: 16px;
+}
+
+#content .exhibit-credits h3 {
+    margin: 24px 0 10px 0;
+}
+
+#content .exhibit-description p,
+#content .exhibit-credits p,
+#content #exhibit-blocks p {
+    font-size: 17px;
+    line-height: 1.3em;
+}
+
+#content .exhibit-credits p {
+    margin-top: 0;
+}
+
+.exhibits.summary #content #primary,
+.exhibits.show #content #primary {
+    border: 0;
+    float: left;
+    font-size: 14px;
+    padding-right: .5em;
+    padding-top: 12px;
+    padding-left: 16px;
+    width: 65%;
+}
+
+.exhibits.summary #content #secondary,
+.exhibits.show #content #secondary {
+    float: right;
+    overflow-wrap: break-word;
+    padding: 0 0 1.5em 1.5em;
+    width: 35%;
+}
+
+.exhibits.summary #content #secondary,
+.exhibits.show #content #secondary {
+    border-left: 1px solid #ddd;
+    padding-left: 1.5em;
+}
+
+/* Exhibit Pages */
+
+#exhibit-blocks {
+    xpadding-top: 12px;
+}
+
+#exhibit-blocks a:link,
+#exhibit-blocks a:visited {
+    color: #1a77bd;
+}
+
+#exhibit-blocks a:hover {
+    color: #843418;
+}
+
+#content #exhibit-blocks .exhibit-item-caption p {
+    color: #777;
+    font-size: 15px;
+}
+
+.layout-gallery {
+    width: 600px;
+}
+
+.layout-gallery .gallery .exhibit-item,
+.layout-gallery .gallery .exhibit-item:nth-of-type(2n) {
+    xmargin-right: 2%;
+    width: 100%;
+}
+
+/* Main exhibit Title link above page navigation buttons on right */
+.exhibits #secondary h2 > a:link,
+.exhibits #secondary h2 > a:visited {
+    color: #1a77bd;
+}
+
+.exhibits #secondary h2 > a:hover {
+    color: #843418;
+}
+
+/* Exhibits page navigation buttons. Styled like left menu buttons on WP pages, but displayed on right */
+#exhibit-pages ul li {
+    -webkit-box-shadow: 0px 3px 3px -3px rgba(72,33,2,0.51);
+    -moz-box-shadow: 0px 3px 3px -3px rgba(72,33,2,0.51);
+    box-shadow: 0px 3px 3px -3px rgba(72,33,2,0.51);
+    background-color: #eee;
+    border-left: 2px solid #f29400;
+    border-left: 2px solid #482102;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 6px 6px 6px 12px;
+}
+
+#exhibit-pages ul a {
+    background: none;
+    border:none;
+    color: #1a77bd;
+    font-size: 17px;
+    line-height: 1.5em;
+    padding: 0;
+}
+
+#exhibit-pages a:link,
+#exhibit-pages a:visited {
+    overflow-wrap: break-word;
+    text-decoration: none;
+}
+
+#exhibit-pages ul a:hover {
+    background-color: #eee;
+    color: #843418;
+    text-decoration: none;
+}
+
+#exhibit-pages ul li.current {
+    background-color: #843418;
+    border-left: 2px solid #843418;
+}
+
+#exhibit-pages ul li.current a {
+    background-color: #843418;
+    color: #fff;
+}
+
+#exhibit-pages ul li.current a:hover {
+    border: none;
+    color: #fff;
+}
+
+/* Exhibit pages prev and next arrows at top and bottom of page */
+
+/* Exhibit pages nav links at top of page */
+#exhibit-prev-next-buttons:first-of-type {
+    margin: 0;
+}
+
+#exhibit-prev-next-buttons {
+    border: none;
+    clear: both;
+    float: right;
+    height: 30px;
+    padding: .5em 0 .5em 0;
+    width: 70px;
+}
+
+#exhibit-prev-next-buttons div {
+    width: 35px;
+}
+
+#exhibit-prev-next-buttons div:last-child {
+    margin-right: 0;
+}
+
+#exhibit-prev-next-buttons a {
+    background: #f8f8f8;
+    background: -webkit-linear-gradient(top, #f8f8f8, #e2e2e2);
+    background: -moz-linear-gradient(top, #f8f8f8, #e2e2e2);
+    background: -o-linear-gradient(top, #f8f8f8, #e2e2e2);
+    background: linear-gradient(to bottom, #f8f8f8, #e2e2e2);
+    border: 1px solid #D8D8D8;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.1), 0 -1px 0 0 rgba(0,0,0,.07) inset;
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.1), 0 -1px 0 0 rgba(0,0,0,.07) inset;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1), 0 -1px 0 0 rgba(0,0,0,.07) inset;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    xheight: 100%;
+    xpadding: 0 7px;
+}
+
+#exhibit-nav-prev a:after,
+#exhibit-nav-next a:after {
+    color: #c76941;
+    font-family: "FontAwesome";
+    height: 24px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 24px;
+}
+
+#exhibit-nav-prev a:hover::after,
+#exhibit-nav-next a:hover::after {
+    color: #e57f52;
+}
+
+#exhibit-nav-next a:after {
+    content: "\f105";
+    text-indent: 0;
+}
+
+#exhibit-nav-prev a:after {
+    content: "\f104";
+    text-indent: -3px;
+}
+
+#exhibit-nav-next a,
+#exhibit-nav-prev a {
+    height: 24px;
+    line-height: 22px;
+    position: relative;
+    text-indent: -9999px;
+    width: 24px;
+}
+
+
+@media screen and (max-width: 844px) {
+    #exhibit-pages {
+        width: 100% !important;
+        border-right: 0 !important;
+        padding: 0 !important;
+    }
+
+    #exhibit-pages {
+        clear: both;
+    }
+
+    .exhibit #exhibit-pages:after,
+    #content > #primary:not(:only-child):after {
+        background-color: transparent;
+    }
+}
+
+
