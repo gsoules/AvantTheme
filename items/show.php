@@ -12,7 +12,7 @@ if (!plugin_is_active('AvantCommon'))
 
 $itemType = ItemMetadata::getElementTextForElementName($item, 'Type');
 
-if ($itemType == 'Gallery' && plugin_is_active('AvantRelationships'))
+if (strpos($itemType, 'Set') === 0 && plugin_is_active('AvantRelationships'))
 {
     echo $this->partial('/items/show-gallery.php', array('item' => $item));
 }

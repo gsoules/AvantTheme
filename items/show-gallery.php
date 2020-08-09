@@ -1,4 +1,6 @@
 <?php
+// NOTE: Galleries are now called Sets, but gallery is still used internally.
+
 echo head(array('title' => metadata($item, array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
@@ -27,7 +29,7 @@ foreach ($relatedItems as $relatedItem)
 $numContainerItems = count($containerItemIds);
 
 if ($numContainerItems >= 1)
-    echo "<div id=\"container-item-links\"><div class=\"container-item-links-label\">" . __('Gallery of: ');
+    echo "<div id=\"container-item-links\"><div class=\"container-item-links-label\">" . __('Items from: ');
 
 foreach ($containerItemIds as $containerItemId)
 {
@@ -83,7 +85,7 @@ foreach ($relatedItems as $relatedItem)
 
 <?php
 if (is_allowed($item, 'edit'))
-    echo AvantAdmin::emitAdminLinksHtml($item->id, 'gallery-links', false);
+    echo AvantCommon::emitAdminLinksHtml($item->id, 'gallery-links', false);
 
 echo $this->partial('add-recent-item-script.php', array('itemId' => $item->id));
 ?>
