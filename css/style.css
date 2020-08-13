@@ -827,6 +827,22 @@ form#login-form fieldset#fieldset-login {
 	max-width: 2400px;
 }
 
+.docs-iframe-container {
+	 overflow: hidden;
+	 padding-top: 100%;
+	 position: relative;
+	 width: 100%;
+ }
+
+.docs-iframe-container iframe {
+	border: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
 @media screen and (min-width: 600px) {
 	#wrap {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -880,6 +896,10 @@ form#login-form fieldset#fieldset-login {
 
 	#secondary {
 		width: 30% !important;
+	}
+
+	.docs-iframe-container {
+		width: 1120px;
 	}
 }
 
