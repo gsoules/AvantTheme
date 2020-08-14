@@ -40,7 +40,10 @@ $this->addHelperPath(PUBLIC_THEME_DIR . "/$themeName/views/helpers", 'Omeka_View
 
     <?php
     queue_css_file('iconfonts');
-    queue_css_file('style');
+
+    // Bump the version to force a reload in all browsers.
+    $version = OMEKA_VERSION . '.1';
+    queue_css_file('style', 'all', false, 'css', $version);
 
     $customCss = get_theme_option('css_file');
     if ($customCss)
