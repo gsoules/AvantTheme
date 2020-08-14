@@ -196,6 +196,16 @@ th, td {
 	padding: 8px 12px;
 }
 
+#banner-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+#advanced-search-link-disabled {
+	color: #cccccc !important;
+	cursor: default;
+}
+
 #query {
 	width: 100%;
 }
