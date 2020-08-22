@@ -1,4 +1,12 @@
 <?php
+
+if (plugin_is_active('AvantReport') && isset($_GET['report']))
+{
+    $report = new PdfReport();
+    $report->createReportForItem($item);
+    return;
+}
+
 $viewerScript = plugin_is_active('AvantZoom') ? ImageZoom::generateOpenSeadragonViewer($item) : '';
 $zoomingEnabled = !empty($viewerScript);
 
@@ -155,6 +163,8 @@ if ($zoomingEnabled)
         <h2>Citation</h2>
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
+
+    <?php echo get_specific_plugin_hook_output('AvantReport', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 </div>
 
 <?php
