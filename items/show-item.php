@@ -2,7 +2,7 @@
 
 if (plugin_is_active('AvantReport') && isset($_GET['report']))
 {
-    $report = new PdfReport();
+    $report = new AvantReport();
     $report->createReportForItem($item);
     return;
 }
