@@ -501,6 +501,7 @@ li.active.nav-item > a {
 	color: #000;
 }
 
+/* Does not work on iOS (shows border on left, bottom, and top.
 .element-metadata-value-multiple {
 	border-top: solid 1px #ccc;
 	border-image: linear-gradient(to right, #ccc, white) 1 stretch;
@@ -508,6 +509,7 @@ li.active.nav-item > a {
 	padding-top: 1px;
 	padding-bottom: 1px;
 }
+*/
 
 /* Draw line between multiple Subject or Title elements */
 .element .element-text:after {
@@ -590,7 +592,7 @@ li.active.nav-item > a {
 
 #item-citation > .element-text {
 	line-height: 21px;
-	margin-top: 0px;
+	margin-top: 0;
 }
 
 .citation-identifier {
@@ -837,22 +839,6 @@ form#login-form fieldset#fieldset-login {
 	max-width: 2400px;
 }
 
-.docs-iframe-container {
-	 overflow: hidden;
-	 padding-top: 100%;
-	 position: relative;
-	 width: 100%;
- }
-
-.docs-iframe-container iframe {
-	border: 0;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
 @media screen and (min-width: 600px) {
 	#wrap {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -960,6 +946,10 @@ form#login-form fieldset#fieldset-login {
 
 	.item-file.image-jpeg {
 		margin-left:8px;
+	}
+
+	#item-citation {
+		width: 320px;
 	}
 }
 
