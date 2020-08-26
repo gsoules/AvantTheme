@@ -4,7 +4,7 @@ if (plugin_is_active('AvantReport') && isset($_GET['report']))
 {
     $report = new AvantReport();
     $report->createReportForItem($item);
-    return;
+    exit();
 }
 
 $viewerScript = plugin_is_active('AvantZoom') ? ImageZoom::generateOpenSeadragonViewer($item) : '';

@@ -21,8 +21,5 @@ else
     echo $this->partial('/items/show-item.php', array('item' => $item));
 }
 
-$emitFooter = !(plugin_is_active('AvantReport') && isset($_GET['report']));
-
-if ($emitFooter)
-    echo foot();
+echo foot();
 ?>
