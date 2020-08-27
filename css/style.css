@@ -499,17 +499,14 @@ li.active.nav-item > a {
 .element-metadata-values {
 	grid-area: valuecol;
 	color: #000;
+	max-width: 520px;
 }
 
-/* Does not work on iOS (shows border on left, bottom, and top.
+/* Does not work on iOS (shows border on left, bottom, and top. */
 .element-metadata-value-multiple {
-	border-top: solid 1px #ccc;
-	border-image: linear-gradient(to right, #ccc, white) 1 stretch;
-	margin-top: 2px;
-	padding-top: 1px;
-	padding-bottom: 1px;
+	padding-top: 0px;
+	border-top: solid 1px #dedede;
 }
-*/
 
 /* Draw line between multiple Subject or Title elements */
 .element .element-text:after {
