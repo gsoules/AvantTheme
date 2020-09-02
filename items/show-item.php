@@ -57,7 +57,7 @@ if ($zoomingEnabled)
 
     if (plugin_is_active('AvantHybrid'))
     {
-        $hybridImageRecords = get_db()->getTable('HybridImages')->getHybridImageRecordsByItemId($item->id);
+        $hybridImageRecords = AvantHybrid::getImageRecords($item->id);
     }
 
     if ($file)
@@ -68,8 +68,7 @@ if ($zoomingEnabled)
     elseif ($hybridImageRecords)
     {
         // Get the HTML for the first hybrid image.
-        $hybridFileName = $hybridImageRecords[0]['file_name'];
-        $imageHtml = AvantHybrid::getImageHtml($item, $hybridFileName);
+        $imageHtml = AvantHybrid::getImageHtml($item, AvantHybrid::getFileName($hybridImageRecords[0]));
 
         // Remove the first image. If there are more, they will appear in the Other Images section.
         unset($hybridImageRecords[0]);
@@ -176,8 +175,7 @@ if ($zoomingEnabled)
             foreach ($hybridImageRecords as $hybridImageRecord)
             {
                 $thumbIndex += 1;
-                $hybridFileName = $hybridImageRecord['file_name'];
-                $imageHtml .= AvantHybrid::getThumbHtml($item, $hybridFileName, $thumbIndex);
+                $imageHtml .= AvantHybrid::getThumbHtml($item, AvantHybrid::getFileName($hybridImageRecord), $thumbIndex);
             }
         }
         ?>
