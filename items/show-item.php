@@ -51,25 +51,28 @@ if ($zoomingEnabled)
 <div id="primary">
     <?php
     $itemFiles = $item->Files;
+    $hybridImageRecords = array();
     $file = count($itemFiles) > 0 ? $itemFiles[0] : null;
     $imageHtml = '';
+
+    if (plugin_is_active('AvantHybrid'))
+    {
+        $hybridImageRecords = get_db()->getTable('HybridImages')->getHybridImageRecordsByItemId($item->id);
+    }
 
     if ($file)
     {
         // Get the HTML for the image that appears at the top of the Show page above the fields.
         $imageHtml = ItemPreview::getFileHtml($item, $file, false);
     }
-    elseif (plugin_is_active('AvantHybrid'))
+    elseif ($hybridImageRecords)
     {
-        $hybridImageRecords = get_db()->getTable('HybridImages')->getHybridImageRecordsByItemId($item->id);
-        if ($hybridImageRecords)
-        {
-            $hybridFileName = $hybridImageRecords[0]['file_name'];
-            $identifier = ItemMetadata::getItemIdentifier($item);
-            $imageUrl = get_option(HybridConfig::OPTION_HYBRID_IMAGE_URL) . $hybridFileName;
-            $thumbUrl = $imageUrl;
-            $imageHtml = ItemPreview::getImageLinkHtml($item->id, $identifier, 'lightbox', $imageUrl, $thumbUrl, '', $title, IMAGE_THUMB_TOOLTIP, '0', 0);
-        }
+        // Get the HTML for the first hybrid image.
+        $hybridFileName = $hybridImageRecords[0]['file_name'];
+        $imageHtml = AvantHybrid::getImageHtml($item, $hybridFileName);
+
+        // Remove the first image. If there are more, they will appear in the Other Images section.
+        unset($hybridImageRecords[0]);
     }
 
     if (strlen($imageHtml) > 0)
@@ -140,13 +143,13 @@ if ($zoomingEnabled)
             $sectionContents = 'Images';
             if ($imageCount == 0)
             {
-                $sectionContents = 'Documents';
+                $sectionContents = 'Attachments';
             }
             else
             {
                if ($documentCount > 0)
                {
-                   $sectionContents = 'Images and Documents';
+                   $sectionContents = 'Images and Attachments';
                }
             }
             echo "<h2>Other $sectionContents</h2>";
@@ -154,21 +157,32 @@ if ($zoomingEnabled)
 
         $imageHtml = '';
 
+        $thumbIndex = 0;
         if ($itemFiles)
         {
             foreach ($itemFiles as $index => $itemFile)
             {
                 $showThumbnail = true;
                 $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail, $index);
+                $thumbIndex = $index;
             }
         }
-        else
-        {
 
+        if ($hybridImageRecords)
+        {
+            if ($thumbIndex == 0)
+                echo "<h2>Other Images</h2>";
+
+            foreach ($hybridImageRecords as $hybridImageRecord)
+            {
+                $thumbIndex += 1;
+                $hybridFileName = $hybridImageRecord['file_name'];
+                $imageHtml .= AvantHybrid::getThumbHtml($item, $hybridFileName, $thumbIndex);
+            }
         }
         ?>
 
-        <?php if ($itemFiles): ?>
+        <?php if ($imageHtml): ?>
             <div class="element-text"><?php echo $imageHtml; ?></div>
         <?php endif; ?>
     </div>
