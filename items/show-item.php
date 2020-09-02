@@ -52,9 +52,25 @@ if ($zoomingEnabled)
     <?php
     $itemFiles = $item->Files;
     $file = count($itemFiles) > 0 ? $itemFiles[0] : null;
+    $imageHtml = '';
 
-    // Get the HTML for the image that appears at the top of the Show page above the fields.
-    $imageHtml = ItemPreview::getFileHtml($item, $file, false);
+    if ($file)
+    {
+        // Get the HTML for the image that appears at the top of the Show page above the fields.
+        $imageHtml = ItemPreview::getFileHtml($item, $file, false);
+    }
+    elseif (plugin_is_active('AvantHybrid'))
+    {
+        $hybridImageRecords = get_db()->getTable('HybridImages')->getHybridImageRecordsByItemId($item->id);
+        if ($hybridImageRecords)
+        {
+            $hybridFileName = $hybridImageRecords[0]['file_name'];
+            $identifier = ItemMetadata::getItemIdentifier($item);
+            $imageUrl = get_option(HybridConfig::OPTION_HYBRID_IMAGE_URL) . $hybridFileName;
+            $thumbUrl = $imageUrl;
+            $imageHtml = ItemPreview::getImageLinkHtml($item->id, $identifier, 'lightbox', $imageUrl, $thumbUrl, '', $title, IMAGE_THUMB_TOOLTIP, '0', 0);
+        }
+    }
 
     if (strlen($imageHtml) > 0)
     {
@@ -137,10 +153,18 @@ if ($zoomingEnabled)
         }
 
         $imageHtml = '';
-        foreach ($itemFiles as $index => $itemFile)
+
+        if ($itemFiles)
         {
-            $showThumbnail = true;
-            $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail, $index);
+            foreach ($itemFiles as $index => $itemFile)
+            {
+                $showThumbnail = true;
+                $imageHtml .= ItemPreview::getFileHtml($item, $itemFile, $showThumbnail, $index);
+            }
+        }
+        else
+        {
+
         }
         ?>
 
