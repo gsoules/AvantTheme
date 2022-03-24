@@ -3,7 +3,7 @@
        <footer id="footer" role="contentinfo">
             <div id="footer-text">
                 <?php
-                $avantLogicLink = "Created by <a href='http://avantlogic.com/' target='_blank' title='AvantLogic Corporation' rel='noreferrer noopener'>AvantLogic</a>";
+                $avantLogicLink = "Created by <a href='https://avantlogic.com/' target='_blank' title='AvantLogic Corporation' rel='noreferrer noopener'>AvantLogic</a>";
                 $loginUrl = url('users/login');
                 $logoutUrl = url('users/logout');
 
