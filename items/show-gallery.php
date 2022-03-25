@@ -50,6 +50,8 @@ if ($numContainerItems >= 1)
 $description = metadata($item, array('Dublin Core', 'Description'), array('no_filter' => true));
 echo "<div class=\"container-description\">$description</div>";
 
+if ($numContainerItems == 0)
+    echo "<div class='container-description' style='font-weight: bold;margin-top:12px;'>This Item Set does not contain any items</div>";
 
 echo "<ul class='item-preview'>";
 foreach ($relatedItems as $relatedItem)
