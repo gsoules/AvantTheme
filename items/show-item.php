@@ -204,7 +204,6 @@ if ($zoomingEnabled)
 </div>
 
 <?php
-echo $this->partial('add-recent-item-script.php', array('itemId' => $item->id));
 
 if ($zoomingEnabled)
 {
